@@ -1,56 +1,71 @@
-import { motion, useSpring, useTransform } from 'framer-motion';
-import { useEffect } from 'react';
+import { memo } from 'react';
+import { motion } from 'framer-motion';
+import { TrendingUp, TrendingDown, Activity, Zap, Database } from 'lucide-react';
+import { tokens } from '../../design-system/tokens';
 
 interface MetricCardProps {
   title: string;
   value: number;
-  change: number;
-  colorClass: string;
-  delay?: number;
+  unit: string;
+  trend: number;
+  color: 'primary' | 'secondary' | 'muted';
+  isHero?: boolean;
 }
 
-export const MetricCard = ({ title, value, change, colorClass, delay = 0 }: MetricCardProps) => {
-  const springValue = useSpring(0, { stiffness: 50, damping: 15 });
-  const displayValue = useTransform(springValue, (v) => `R$ ${v.toFixed(2)}`);
+export const MetricCard = memo(({ title, value, unit, trend, color, isHero }: MetricCardProps) => {
+  const isPositive = trend >= 0;
+  const accentColor = tokens.colors.accent[color];
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      springValue.set(value);
-    }, delay * 1000 + 500);
-    return () => clearTimeout(timeout);
-  }, [value, delay, springValue]);
+  const Icon = color === 'primary' ? Activity : color === 'secondary' ? Zap : Database;
 
   return (
     <motion.div
-      initial={{ scale: 0.8, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={{ scale: 1.03, rotateX: 2, rotateY: 2 }}
-      className="glass-card p-6 flex flex-col justify-between h-full relative overflow-hidden group"
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+      className={`exec-glass p-6 rounded-2xl relative border-white/5 transition-all shadow-xl
+      ${isHero ? 'border-l-4 border-l-teal-500' : ''}`}
     >
-      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-white/10 to-transparent blur-2xl -mr-8 -mt-8 transition-opacity duration-500 opacity-0 group-hover:opacity-100`} />
-      
-      <div>
-        <h3 className="text-gray-400 text-sm font-medium mb-1">{title}</h3>
-        <motion.div className={`text-4xl font-bold font-display ${colorClass}`}>
-          {displayValue}
-        </motion.div>
-      </div>
+      {/* Decorative Glow */}
+      <div 
+        className="absolute top-0 right-0 w-24 h-24 blur-[40px] opacity-10 pointer-events-none rounded-full"
+        style={{ backgroundColor: accentColor }}
+      />
 
-      <div className="mt-4 flex items-center justify-between">
-        <span className={`text-sm flex items-center ${change >= 0 ? 'text-emerald-400' : 'text-rose-400'}`}>
-          {change >= 0 ? '↑' : '↓'} {Math.abs(change).toFixed(1)}%
-          <span className="text-gray-500 ml-1 text-xs">vs mês ant.</span>
-        </span>
-        <div className="w-10 h-1 bg-white/5 rounded-full overflow-hidden">
-          <motion.div 
-            initial={{ width: 0 }}
-            animate={{ width: '70%' }}
-            transition={{ delay: delay + 0.5, duration: 1 }}
-            className={`h-full ${colorClass.replace('text-', 'bg-')}`} 
-          />
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div 
+            className="p-2 rounded-lg bg-slate-900/50 border border-white/5"
+          >
+            <Icon className="w-4 h-4" style={{ color: accentColor }} />
+          </div>
+          <h3 className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">{title}</h3>
+        </div>
+        
+        <div className={`flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold border
+          ${isPositive ? 'text-rose-400 bg-rose-400/5 border-rose-400/20' : 'text-emerald-400 bg-emerald-400/5 border-emerald-400/20'}`}>
+          {isPositive ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
+          {Math.abs(trend)}%
         </div>
       </div>
+
+      <div className="flex items-baseline gap-2">
+        <span className="text-3xl font-display font-bold text-white tracking-tight">
+          {unit === 'R$/L' ? `R$ ${value.toFixed(2)}` : value.toFixed(1)}
+        </span>
+        <span className="text-xs text-slate-500 font-bold uppercase tracking-widest">{unit}</span>
+      </div>
+
+      {isHero && (
+        <div className="mt-4 flex items-center gap-2">
+          <div className="h-1 flex-1 bg-slate-800 rounded-full overflow-hidden">
+            <motion.div 
+              initial={{ width: 0 }}
+              animate={{ width: '65%' }}
+              className="h-full bg-teal-500"
+            />
+          </div>
+          <span className="text-[8px] text-slate-600 font-bold uppercase font-mono">Índice_Confiança</span>
+        </div>
+      )}
     </motion.div>
   );
-};
+});

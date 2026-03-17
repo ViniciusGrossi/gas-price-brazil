@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,66 +11,84 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    #6C3BFF 0%,
-    #2E1A47 40%,
-    #0B0B0F 100%
-  );
-  color: #F3F4F6;
+  background: #020617;
+  color: #F8FAFC;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
 @layer components {
+  .cyber-glass {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 0.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.4);
+  }
+
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    @apply cyber-glass;
   }
 
-  .neon-glow-violet {
-    box-shadow: 0 0 15px rgba(108, 59, 255, 0.3);
+  /* Ultra-Premium Executive Glass */
+  .exec-glass {
+    @apply backdrop-blur-[20px] bg-white/[0.03];
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .neon-text-gasoline {
-    color: #8B5CF6;
-    text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+  .exec-glass:hover {
+    @apply bg-white/[0.05];
+    border-color: rgba(20, 184, 166, 0.2);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3), 0 0 20px rgba(20, 184, 166, 0.05);
+    transform: translateY(-2px);
   }
 
-  .neon-text-ethanol {
-    color: #3B82F6;
-    text-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  /* Subtle Corporate Glow */
+  .exec-glow-teal {
+    box-shadow: 0 0 30px rgba(20, 184, 166, 0.1), 0 0 60px rgba(20, 184, 166, 0.05);
   }
 
-  .neon-text-diesel {
-    color: #EC4899;
-    text-shadow: 0 0 8px rgba(236, 72, 153, 0.5);
+  .exec-border-light {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Refined Typography Utilities */
+  .text-executive-heading {
+    @apply text-slate-100 font-display font-semibold tracking-tight;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-executive-data {
+    font-family: 'JetBrains Mono', monospace;
   }
 }
 
-/* Ambient Background Orbs */
-.bg-orb {
+/* Scrollbar Refinement */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-teal-500/50;
+}
+
+/* Ambient Grain Overlay */
+body::before {
+  content: "";
   position: fixed;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  filter: blur(120px);
-  z-index: -1;
-  opacity: 0.15;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.015;
   pointer-events: none;
-}
-
-.bg-orb-violet {
-  background: #6C3BFF;
-  top: -100px;
-  right: -100px;
-}
-
-.bg-orb-blue {
-  background: #3B82F6;
-  bottom: -100px;
-  left: -100px;
+  z-index: 100;
 }

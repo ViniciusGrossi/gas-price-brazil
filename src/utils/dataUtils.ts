@@ -1,3 +1,5 @@
+import { getIPCAMultiplier } from '../data/ipcaData';
+
 export type FuelData = {
   "Mês/Ano": string;
   "Gasolina (R$/L)": number;
@@ -16,11 +18,11 @@ export const calculateFuelParity = (ethanolPrice: number, gasolinePrice: number)
   return ethanolPrice / gasolinePrice;
 };
 
-export const adjustForInflation = (nominalPrice: number, dateIndex: number, currentIPCAIndex: number, ipcaAtDate: number) => {
-  if (ipcaAtDate <= 0) return nominalPrice;
-  // Formula: Real Price = Nominal Price * (Current Index / Index at Date)
-  // However, BCB API gives monthly percentage. We need to convert it to a cumulative index first.
-  return nominalPrice * (currentIPCAIndex / ipcaAtDate);
+export const adjustForInflation = (nominalPrice: number, dateStr: string) => {
+  if (!dateStr) return nominalPrice;
+  const year = dateStr.split('/')[1];
+  const multiplier = getIPCAMultiplier(year);
+  return nominalPrice * multiplier;
 };
 
 export const calculateCorrelation = (x: number[], y: number[]) => {
@@ -54,22 +56,45 @@ export const calculateGovStats = (data: FuelData[], startYear: number, endYear: 
   const end = periodData[periodData.length - 1];
 
   const getInc = (s: number, e: number) => ((e - s) / s) * 100;
+  
+  const getAvg = (field: keyof FuelData) => {
+    const values = periodData.map(d => d[field] as number).filter(v => typeof v === 'number');
+    return values.length > 0 ? values.reduce((a, b) => a + b, 0) / values.length : 0;
+  };
+
+  const getMinMax = (field: keyof FuelData) => {
+    const values = periodData.map(d => d[field] as number).filter(v => typeof v === 'number');
+    return {
+      min: Math.min(...values),
+      max: Math.max(...values)
+    };
+  };
 
   return {
     gasoline: getInc(start["Gasolina (R$/L)"], end["Gasolina (R$/L)"]),
     ethanol: getInc(start["Etanol (R$/L)"], end["Etanol (R$/L)"]),
     diesel: getInc(start["Diesel (R$/L)"], end["Diesel (R$/L)"]),
+    averages: {
+      gasoline: getAvg("Gasolina (R$/L)"),
+      ethanol: getAvg("Etanol (R$/L)"),
+      diesel: getAvg("Diesel (R$/L)"),
+    },
+    minMax: {
+      gasoline: getMinMax("Gasolina (R$/L)"),
+      ethanol: getMinMax("Etanol (R$/L)"),
+      diesel: getMinMax("Diesel (R$/L)"),
+    }
   };
 };
 
 export const getGovernmentPeriods = (data?: FuelData[]) => {
   const basePeriods = [
-    { name: "FHC/Lula I", start: 2002, end: 2006 },
-    { name: "Lula II", start: 2006, end: 2010 },
-    { name: "Dilma I", start: 2010, end: 2014 },
-    { name: "Dilma II/Temer", start: 2014, end: 2018 },
-    { name: "Bolsonaro", start: 2018, end: 2022 },
-    { name: "Lula III", start: 2022, end: 2026 },
+    { name: "Lula I", start: 2003, end: 2006 },
+    { name: "Lula II", start: 2007, end: 2010 },
+    { name: "Dilma I", start: 2011, end: 2014 },
+    { name: "Dilma II / Temer", start: 2015, end: 2018 },
+    { name: "Bolsonaro", start: 2019, end: 2022 },
+    { name: "Lula III", start: 2023, end: 2026 },
   ];
 
   if (!data) return basePeriods;
@@ -82,12 +107,13 @@ export const getGovernmentPeriods = (data?: FuelData[]) => {
 
 export const getKeyEvents = () => {
   return [
-    { year: 2007, name: "Descoberta do Pré-sal", description: "Anúncio da descoberta de grandes reservas na Bacia de Santos." },
-    { year: 2008, name: "Crise Financeira Global", description: "Impacto da crise do subprime no mercado de commodities." },
-    { year: 2014, name: "Investigações Petrobras", description: "Início da Operação Lava Jato e crise de governança na estatal." },
-    { year: 2016, name: "Impeachment Dilma", description: "Mudança na política de preços da Petrobras (PPI - Paridade de Importação)." },
-    { year: 2020, name: "Pandemia COVID-19", description: "Queda drástica na demanda global seguida de volatilidade extrema." },
-    { year: 2022, name: "Guerra na Ucrânia", description: "Crise energética global e disparada nos preços internacionais do barril." },
+    { date: "11/2007", name: "Pré-sal", description: "Anúncio da descoberta de grandes reservas na Bacia de Santos." },
+    { date: "09/2008", name: "Crise Lehman", description: "Auge da crise financeira global com colapso do banco americano." },
+    { date: "03/2014", name: "Lava Jato", description: "Início das investigações sobre corrupção na Petrobras." },
+    { date: "05/2016", name: "Impeachment", description: "Michel Temer assume a presidência e altera política de preços." },
+    { date: "05/2018", name: "Greve dos Caminhoneiros", description: "Paralisação nacional contra a alta do diesel." },
+    { date: "03/2020", name: "Pandemia COVID-19", description: "Colapso dos preços do petróleo e queda drástica na demanda." },
+    { date: "02/2022", name: "Guerra na Ucrânia", description: "Disparada nos preços internacionais do petróleo." },
   ];
 };
 
@@ -102,4 +128,18 @@ export const getBrentMockData = (monthsCount: number) => {
     result.push(basePrices[yearIdx] + noise);
   }
   return result;
+};
+
+export const getFuelCurrentPrices = (data: FuelData[]) => {
+  if (!data || data.length === 0) return { gasoline: 0, ethanol: 0, diesel: 0 };
+  const last = data[data.length - 1];
+  return {
+    gasoline: last["Gasolina (R$/L)"],
+    ethanol: last["Etanol (R$/L)"],
+    diesel: last["Diesel (R$/L)"]
+  };
+};
+
+export const findEventForDate = (date: string) => {
+  return getKeyEvents().find(e => e.date === date);
 };

@@ -1,31 +1,43 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react'
 import { 
   FuelData, 
-  filterDataByPeriod, 
   getBrentMockData, 
-  calculateCorrelation, 
-  calculateCAGR 
+  getGovernmentPeriods,
+  getFuelCurrentPrices
 } from './utils/dataUtils'
 import fuelDataRaw from './data/fuel_data.json'
+import html2canvas from 'html2canvas'
+import { motion } from 'framer-motion'
+import { 
+  Briefcase, 
+  Activity, 
+  BarChart3, 
+  Zap, 
+  Activity as AnalyticsIcon,
+  Download
+} from 'lucide-react'
 
 import { LoadingSkeleton } from './components/layout/LoadingSkeleton'
 import { MetricCard } from './components/cards/MetricCard'
 import { FuelChart } from './components/charts/FuelChart'
 import { ParityChart } from './components/charts/ParityChart'
 import { BrentChart } from './components/charts/BrentChart'
+import { GovComparator } from './components/charts/GovComparator'
+import { CostSimulator } from './components/tools/CostSimulator'
 import { useIPCAData } from './hooks/useIPCAData'
-import { TrendingUp, Activity, BarChart3, Clock, DollarSign, Globe } from 'lucide-react'
 
 type PriceMode = 'nominal' | 'real';
-type TimeRange = 'Full' | '2002-2008' | '2008-2014' | '2014-2020' | '2020-2026';
 
 function App() {
   const [loading, setLoading] = useState(true)
+  const [exporting, setExporting] = useState(false)
   const [data, setData] = useState<FuelData[]>([])
   const [priceMode, setPriceMode] = useState<PriceMode>('nominal')
   const [visibleFuels, setVisibleFuels] = useState<string[]>(['Gasolina', 'Etanol', 'Diesel'])
+  const [highlightedGov, setHighlightedGov] = useState<string | null>(null)
   
   const { cumulativeIndex, loading: ipcaLoading } = useIPCAData()
+  const dashboardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -35,251 +47,274 @@ function App() {
       }))
       setData(fuelWithBrent)
       setLoading(false)
-    }, 1800)
+    }, 1200)
     return () => clearTimeout(timer)
   }, [])
 
-  const toggleFuel = (fuel: string) => {
+  const toggleFuel = useCallback((fuel: string) => {
     setVisibleFuels(prev => 
-      prev.includes(fuel) 
-        ? prev.filter(f => f !== fuel) 
-        : [...prev, fuel]
+      prev.includes(fuel) ? prev.filter(f => f !== fuel) : [...prev, fuel]
     )
-  }
+  }, []);
 
-  const currentData = data[data.length - 1] || {}
-  const prevData = data[data.length - 2] || {}
-
-  const getChange = (curr: number, prev: number) => {
-    if (!curr || !prev) return 0
-    return ((curr - prev) / prev) * 100
-  }
-
-  // Dynamic Insights Calculations
-  const insights = useMemo(() => {
-    if (data.length < 2) return null;
+  // Filtering data based on highlightedGov
+  const filteredData = useMemo(() => {
+    if (!highlightedGov) return data;
+    const gov = getGovernmentPeriods().find(g => g.name === highlightedGov);
+    if (!gov) return data;
     
-    const gasolinePrices = data.map(d => d["Gasolina (R$/L)"]);
-    const brentPrices = data.map(d => d["Brent (USD)"] || 0);
-    
-    const correlation = calculateCorrelation(gasolinePrices, brentPrices);
-    const cagr = calculateCAGR(
-      gasolinePrices[0], 
-      gasolinePrices[gasolinePrices.length - 1], 
-      data.length / 12
-    );
+    return data.filter(item => {
+      const year = parseInt(item["Mês/Ano"].split('/')[1]);
+      return year >= gov.start && year <= gov.end;
+    });
+  }, [data, highlightedGov]);
 
-    const parityValues = data.map(d => d["Etanol (R$/L)"] / d["Gasolina (R$/L)"]);
-    const competitiveMonths = parityValues.filter(v => v < 0.7).length;
-    const competitivePct = (competitiveMonths / data.length) * 100;
+  const exportChart = useCallback(async () => {
+    if (!dashboardRef.current) return;
+    setExporting(true);
+    try {
+      const canvas = await html2canvas(dashboardRef.current, {
+        backgroundColor: '#0b1620',
+        scale: 2,
+        useCORS: true,
+        logging: false
+      });
+      
+      const link = document.createElement('a');
+      link.download = `analise_executiva_${new Date().toISOString().split('T')[0]}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch (err) {
+      console.error('Export falhou', err);
+    }
+    setExporting(false);
+  }, []);
 
-    return { correlation, cagr, competitivePct };
-  }, [data]);
+  const currentPrices = useMemo(() => getFuelCurrentPrices(data), [data])
+  const govPeriods = useMemo(() => getGovernmentPeriods(data), [data])
 
-  const brentChartData = data.map(d => ({
+  const brentChartData = useMemo(() => filteredData.map(d => ({
     date: d["Mês/Ano"],
     value: d["Brent (USD)"] || 0
-  }));
+  })), [filteredData]);
 
   const isGlobalLoading = loading || ipcaLoading;
 
-  return (
-    <div className="min-h-screen relative overflow-hidden bg-[#0A0A0F] text-gray-100 font-sans pb-20">
-      {/* Background Decorative Elements */}
-      <div className="bg-orb bg-orb-violet -top-40 -right-40 opacity-20" />
-      <div className="bg-orb bg-orb-blue -bottom-40 -left-40 opacity-10" />
-      <div className="fixed inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay" />
+  if (isGlobalLoading) {
+    return (
+      <div className="min-h-screen bg-[#0b1620] flex items-center justify-center p-10">
+        <LoadingSkeleton />
+      </div>
+    );
+  }
 
-      <main className="container mx-auto px-6 py-10 relative z-10 max-w-7xl">
-        <header className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 mb-2">
-              <Globe className="w-4 h-4 text-violet-500" />
-              <span className="text-violet-400 font-bold uppercase tracking-[0.3em] text-[10px]">Macro Analysis Engine</span>
+  return (
+    <div className="min-h-screen relative overflow-hidden flex flex-col bg-[#0b1620]" ref={dashboardRef}>
+      {/* Background Depth Layers */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-teal-500/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3" />
+      </div>
+
+      <div className="relative z-10 flex flex-col flex-1 max-w-[1600px] mx-auto w-full p-6 lg:p-10 gap-8">
+        
+        {/* Header: Executive Brand & Status */}
+        <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex items-center gap-5">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-500 p-[1px] shadow-lg shadow-teal-500/10">
+              <div className="w-full h-full rounded-xl bg-slate-950 flex items-center justify-center">
+                <Briefcase className="w-6 h-6 text-teal-400" />
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-display font-extrabold tracking-tighter text-white leading-[0.9]">
-              Fuel Analytics <br /><span className="bg-gradient-to-r from-violet-400 via-fuchsia-500 to-blue-500 bg-clip-text text-transparent">Insight Dashboard</span>
-            </h1>
-            <p className="text-gray-500 text-sm font-medium tracking-wide mt-4">
-              Brazilian Fuel Prices vs Global Oil Market (2002–2026)
-            </p>
+            <div>
+              <h1 className="text-2xl font-display font-bold text-white tracking-tight">Hub de Análise Executiva</h1>
+              <div className="flex items-center gap-2 mt-1">
+                <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+                <p className="text-xs text-slate-400 uppercase tracking-widest font-medium">Protocolo de Sincronização Ativo // BCB_ANP_DATA_NODE</p>
+              </div>
+            </div>
           </div>
           
-          <div className="flex flex-col gap-4">
-            {/* Fuel Filter */}
-            <div className="flex flex-wrap gap-2 self-start md:self-end bg-white/5 p-1 rounded-xl border border-white/10 backdrop-blur-xl">
-              {[
-                { id: 'Gasolina', color: 'bg-[#8B5CF6]' },
-                { id: 'Etanol', color: 'bg-[#3B82F6]' },
-                { id: 'Diesel', color: 'bg-[#EC4899]' }
-              ].map(fuel => (
-                <button
-                  key={fuel.id}
-                  onClick={() => toggleFuel(fuel.id)}
-                  className={`px-4 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-wider transition-all flex items-center gap-2
-                  ${visibleFuels.includes(fuel.id) 
-                    ? 'bg-white/10 text-white border border-white/20' 
-                    : 'text-gray-500 hover:text-gray-400 opacity-50'}`}
+          <div className="flex gap-4">
+             <div className="flex p-1 exec-glass border-white/5 rounded-lg">
+                <button 
+                  onClick={() => setPriceMode('nominal')}
+                  className={`px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-widest transition-all
+                  ${priceMode === 'nominal' ? 'bg-teal-500 text-white' : 'text-slate-500 hover:text-slate-300'}`}
                 >
-                  <div className={`w-2 h-2 rounded-full ${fuel.color}`} />
-                  {fuel.id}
+                  Nominal
                 </button>
-              ))}
-            </div>
-
-            {/* Price Mode Toggle */}
-            <div className="flex bg-white/5 p-1 rounded-xl border border-white/10 backdrop-blur-xl self-start md:self-end">
-              <button 
-                onClick={() => setPriceMode('nominal')}
-                className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2
-                ${priceMode === 'nominal' ? 'bg-white/10 text-white shadow-lg shadow-white/5' : 'text-gray-500 hover:text-gray-300'}`}
-              >
-                <DollarSign className="w-3 h-3" /> Preço Nominal
-              </button>
-              <button 
-                onClick={() => setPriceMode('real')}
-                className={`px-6 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all flex items-center gap-2
-                ${priceMode === 'real' ? 'bg-violet-600/20 text-violet-400 border border-violet-500/20' : 'text-gray-500 hover:text-gray-300'}`}
-              >
-                <TrendingUp className="w-3 h-3" /> Preço Real (IPCA)
-              </button>
-            </div>
+                <button 
+                  onClick={() => setPriceMode('real')}
+                  className={`px-4 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-widest transition-all
+                  ${priceMode === 'real' ? 'bg-teal-500 text-white' : 'text-slate-500 hover:text-slate-300'}`}
+                >
+                  Ajustado (IPCA)
+                </button>
+             </div>
+            
+            <button 
+              onClick={exportChart}
+              disabled={exporting}
+              className="px-4 py-2 exec-glass border-white/5 text-[10px] font-bold uppercase tracking-widest hover:bg-teal-500/10 transition-all flex items-center gap-2 text-teal-400"
+            >
+              <Download className="w-4 h-4" />
+              {exporting ? '...' : 'Exportar'}
+            </button>
           </div>
         </header>
 
-        {isGlobalLoading ? (
-          <LoadingSkeleton />
-        ) : (
-          <div className="space-y-12 animate-in fade-in slide-in-from-bottom-8 duration-1000 ease-out">
-            
-            {/* Metric Cards Row */}
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <MetricCard 
-                title="Gasolina Comum" 
-                value={currentData["Gasolina (R$/L)"]} 
-                change={getChange(currentData["Gasolina (R$/L)"], prevData["Gasolina (R$/L)"])} 
-                colorClass="neon-text-gasoline"
-                delay={0.1}
-              />
-              <MetricCard 
-                title="Etanol Hidratado" 
-                value={currentData["Etanol (R$/L)"]} 
-                change={getChange(currentData["Etanol (R$/L)"], prevData["Etanol (R$/L)"])} 
-                colorClass="neon-text-ethanol"
-                delay={0.3}
-              />
-              <MetricCard 
-                title="Óleo Diesel" 
-                value={currentData["Diesel (R$/L)"]} 
-                change={getChange(currentData["Diesel (R$/L)"], prevData["Diesel (R$/L)"])} 
-                colorClass="neon-text-diesel"
-                delay={0.5}
-              />
-            </section>
-
-            {/* Main Charts Architecture */}
-            <section className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-              {/* Left Column: Historical Fuel Series */}
-              <div className="lg:col-span-3 space-y-8">
-                <div className="space-y-4">
-                  <div className="flex flex-col gap-1 px-2">
-                     <div className="flex items-center gap-3">
-                        <TrendingUp className="w-5 h-5 text-violet-500" />
-                        <h2 className="text-2xl font-display font-bold text-white tracking-tight">Série Temporal Comparativa</h2>
-                     </div>
-                     <p className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] ml-8">Ajuste o controle inferior para navegar na história</p>
-                  </div>
-                  <FuelChart 
-                    data={data} 
-                    priceMode={priceMode} 
-                    ipcaIndex={cumulativeIndex} 
-                    visibleFuels={visibleFuels}
-                  />
-                </div>
-                
-                {/* Brent Sync Chart */}
-                <div className="space-y-4">
-                   <div className="flex items-center gap-3 px-2">
-                      <BarChart3 className="w-5 h-5 text-amber-500" />
-                      <h2 className="text-xl font-display font-bold text-white tracking-tight">Variação do Petróleo Brent (USD)</h2>
-                   </div>
-                   <BrentChart data={brentChartData} />
-                </div>
-              </div>
-
-              {/* Right Column: Analytical Panel */}
-              <div className="lg:col-span-1 space-y-8">
-                {/* Analyst Insight Panel */}
-                <div className="glass-card p-8 flex flex-col justify-between h-fit bg-gradient-to-br from-violet-600/10 via-transparent to-transparent border-violet-500/20">
-                   <div className="space-y-8">
-                      <div className="flex items-center justify-between">
-                         <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                           <Activity className="w-5 h-5 text-violet-400" /> Key Insights
-                         </h3>
-                      </div>
-                      
-                      <div className="space-y-6">
-                         <div className="space-y-2">
-                            <p className="text-[10px] text-gray-500 font-extrabold uppercase tracking-[0.2em]">Correlação Óleo/Fuel</p>
-                            <div className="flex items-center gap-3">
-                               <div className="text-2xl font-display font-bold text-white">{insights?.correlation.toFixed(2)}</div>
-                               <div className="text-[10px] bg-white/5 px-2 py-0.5 rounded text-gray-400">Pearson R</div>
-                            </div>
-                         </div>
-
-                         <div className="h-px bg-white/5 w-full" />
-
-                         <div className="space-y-2">
-                            <p className="text-[10px] text-gray-500 font-extrabold uppercase tracking-[0.2em]">CAGR Total (Histórico)</p>
-                            <div className="text-2xl font-display font-bold text-violet-400">+{insights?.cagr.toFixed(1)}% / ano</div>
-                         </div>
-
-                         <div className="h-px bg-white/5 w-full" />
-
-                         <div className="space-y-2">
-                            <p className="text-[10px] text-gray-500 font-extrabold uppercase tracking-[0.2em]">Vantagem Etanol</p>
-                            <div className="text-2xl font-display font-bold text-blue-400">{insights?.competitivePct.toFixed(0)}% do tempo</div>
-                         </div>
-                      </div>
-                   </div>
-                   
-                   <div className="mt-12 space-y-4">
-                      <button className="w-full py-4 rounded-xl bg-violet-600/20 text-violet-400 border border-violet-600/30 font-bold text-xs hover:bg-violet-600/30 transition-all flex items-center justify-center gap-2 uppercase tracking-widest">
-                         <Clock className="w-4 h-4" /> Relatório Pro
-                      </button>
-                   </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Alcohol Parity - Wide View */}
-            <section className="space-y-4">
-               <div className="flex items-center gap-3 px-2">
-                  <Activity className="w-5 h-5 text-blue-500" />
-                  <h2 className="text-xl font-display font-bold text-white tracking-tight">Competitividade: Etanol vs Gasolina</h2>
-               </div>
-               <div className="h-[450px]">
-                  <ParityChart data={data} />
-               </div>
-            </section>
-
+        {/* Hero Row: Performance Metrics */}
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <MetricCard 
+            title="Preço Gasolina" 
+            value={currentPrices.gasoline} 
+            unit="R$/L"
+            trend={-0.3} 
+            color="primary"
+            isHero={true}
+          />
+          <MetricCard 
+            title="Preço Etanol" 
+            value={currentPrices.ethanol} 
+            unit="R$/L"
+            trend={1.2} 
+            color="secondary"
+          />
+          <MetricCard 
+            title="Preço Diesel" 
+            value={currentPrices.diesel} 
+            unit="R$/L"
+            trend={-0.8} 
+            color="muted"
+          />
+          <div className="exec-glass p-6 rounded-2xl flex flex-col justify-center border-white/5">
+            <p className="text-xs text-slate-500 uppercase font-bold tracking-widest mb-2">Período_Ref // Q1</p>
+            <p className="text-xl text-white font-display font-semibold">Março 2024</p>
+            <div className="h-1 w-12 bg-teal-500/50 rounded-full mt-4" />
           </div>
-        )}
+        </section>
 
-        <footer className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-600 text-[10px] font-bold uppercase tracking-[0.3em]">
-           <div className="flex items-center gap-4">
-              <span>&copy; 2026 Fuel Dashboard Analytics</span>
-              <span className="text-gray-800">|</span>
-              <span className="flex items-center gap-1.5"><DollarSign className="w-3 h-3"/> IPCA Source: SGS 433 (BCB)</span>
+        {/* Analytical Deck: Correlation & History */}
+        <main className="grid grid-cols-12 gap-8 flex-1 min-h-0">
+          
+          {/* Sidebar: Executive Utilities */}
+          <aside className="col-span-12 lg:col-span-3 flex flex-col gap-8">
+            <div className="flex flex-col gap-2">
+              <h3 className="text-xs text-slate-500 uppercase font-black tracking-[0.2em]">Painel Operacional</h3>
+              <div className="h-[2px] w-8 bg-teal-500/50" />
+            </div>
+
+            {/* Fuel Filters */}
+            <div className="exec-glass p-6 rounded-2xl border-white/5 space-y-4">
+              <h4 className="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Filtros de Combustível</h4>
+              <div className="flex flex-col gap-2">
+                {['Gasolina', 'Etanol', 'Diesel'].map(fuel => (
+                  <button 
+                    key={fuel}
+                    onClick={() => toggleFuel(fuel)}
+                    className={`flex items-center justify-between p-3 rounded-lg border transition-all ${
+                      visibleFuels.includes(fuel) 
+                        ? 'bg-teal-500/10 border-teal-500/30 text-teal-400' 
+                        : 'bg-transparent border-white/5 text-slate-500'
+                    }`}
+                  >
+                    <span className="text-[10px] font-bold uppercase tracking-widest">{fuel}</span>
+                    <div className={`w-1.5 h-1.5 rounded-full ${visibleFuels.includes(fuel) ? 'bg-teal-400 animate-pulse' : 'bg-slate-800'}`} />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <CostSimulator />
+            
+            <div className="exec-glass p-6 rounded-2xl border-white/5 overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <BarChart3 className="w-12 h-12 text-teal-400" />
+              </div>
+              <h4 className="text-xs text-slate-500 uppercase font-bold tracking-widest mb-6">Market Intel</h4>
+              <div className="flex items-end gap-1 h-12 mb-4">
+                {[40, 60, 45, 70, 55, 90, 65].map((h, i) => (
+                  <div key={i} className="flex-1 bg-teal-500/20 rounded-t-sm" style={{ height: `${h}%` }} />
+                ))}
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed italic">"Índices de paridade integrados aos limites corporativos da ANP."</p>
+            </div>
+          </aside>
+
+          {/* Main View: Timeline Engine */}
+          <section className="col-span-12 lg:col-span-9 flex flex-col gap-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-2 rounded-lg bg-teal-500/10 border border-teal-500/20">
+                  <AnalyticsIcon className="w-4 h-4 text-teal-400" />
+                </div>
+                <h3 className="text-slate-100 font-display font-bold text-lg">Horizonte Integrado de Preços</h3>
+              </div>
+              {highlightedGov && (
+                <button 
+                  onClick={() => setHighlightedGov(null)}
+                  className="text-[10px] text-teal-500 font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-teal-500/20 hover:bg-teal-500/10"
+                >
+                  Limpar Filtro Mandato: {highlightedGov}
+                </button>
+              )}
+            </div>
+
+            <div className="flex-1 min-h-[500px]">
+              <FuelChart 
+                data={filteredData} 
+                priceMode={priceMode} 
+                ipcaIndex={cumulativeIndex}
+                visibleFuels={visibleFuels}
+                highlightedGov={highlightedGov}
+              />
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+               <BrentChart data={brentChartData} highlightedGov={highlightedGov} />
+               <ParityChart data={filteredData} highlightedGov={highlightedGov} />
+            </div>
+          </section>
+        </main>
+
+        {/* Narrative Deck: Political History */}
+        <section className="mt-4 flex flex-col gap-6">
+           <div className="flex items-center gap-3">
+             <div className="p-2 rounded-lg bg-slate-800/50 border border-white/5">
+                <Zap className="w-4 h-4 text-teal-400" />
+             </div>
+             <h3 className="text-slate-100 font-display font-bold text-lg">Registro Narrativo de Governança</h3>
            </div>
-           <div className="flex gap-6">
-              <a href="#" className="hover:text-violet-400 transition-colors">Economic API</a>
-              <a href="#" className="hover:text-violet-400 transition-colors">Documentation</a>
+           
+           <GovComparator 
+              periods={govPeriods as any}
+              selectedFuel={visibleFuels[0] as any || 'Gasolina'}
+              onSelectPeriod={setHighlightedGov}
+              highlightedPeriod={highlightedGov}
+           />
+        </section>
+
+        {/* Footer */}
+        <footer className="mt-8 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 text-[10px] uppercase font-bold tracking-widest font-mono">
+           <div className="flex items-center gap-8">
+             <p>© 2025 PRECISE_ENERGY_ALALYTICS</p>
+             <p>SYSTEM_ID: EXE_ANP_992</p>
+           </div>
+           <div className="flex items-center gap-6">
+              <span className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-teal-500" />
+                PROTOCOLO_SEGURO
+              </span>
+              <span className="flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                SINCRONIA_MERCADO_GLOBAL
+              </span>
            </div>
         </footer>
-      </main>
+      </div>
     </div>
-  )
+  );
 }
 
 export default App

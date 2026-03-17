@@ -1,38 +1,53 @@
 export const tokens = {
   colors: {
-    backgroundStart: "#6C3BFF",
-    backgroundMid: "#2E1A47",
-    backgroundEnd: "#0B0B0F",
-
-    gasoline: "#8B5CF6",
-    ethanol: "#3B82F6",
-    diesel: "#EC4899",
-
-    glassBackground: "rgba(255,255,255,0.05)",
-    glassBorder: "rgba(255,255,255,0.1)",
-    
-    white: "#F3F4F6",
-    gray: "#9CA3AF",
-    divider: "#2A2A31",
-  },
-  typography: {
-    fonts: {
-      primary: "'Inter', sans-serif",
-      display: "'Space Grotesk', sans-serif",
+    background: {
+      primary: '#0b1620',    // Midnight Onyx
+      secondary: '#0e1a2a',  // Executive Navy
+      glass: 'rgba(255, 255, 255, 0.03)',
+      overlay: 'rgba(2, 6, 23, 0.85)',
     },
-    sizes: {
-      dashboardTitle: "36px",
-      sectionTitle: "24px",
-      body: "15px",
-      metricNumber: "42px",
+    accent: {
+      primary: '#14b8a6',    // Deep Teal
+      secondary: '#06b6d4',  // Soft Cyan
+      muted: '#475569',     // Slate Slate
+      success: '#a3e635',    // Sage Green
+      warning: '#fbbf24',    // Amber
+      error: '#f87171',      // Muted Red
+    },
+    text: {
+      heading: '#f1f5f9',
+      body: '#94a3b8',
+      muted: '#475569',
+      accent: '#2dd4bf',
     }
   },
-  animations: {
-    duration: {
-      standard: 0.6,
-      slow: 0.9,
-      fast: 0.2,
+  typography: {
+    fontFamily: {
+      display: '"Space Grotesk", system-ui, sans-serif',
+      sans: '"Inter", system-ui, sans-serif',
+      mono: '"JetBrains Mono", monospace' // Reserved for data
     },
-    stagger: 0.2,
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.25rem',
+      xl: '1.5rem',
+      '2xl': '2rem',
+      '3xl': '3rem',
+    }
+  },
+  borderRadius: {
+    card: '16px',
+    button: '8px',
+    input: '8px',
+  },
+  animation: {
+    duration: {
+      fast: '200ms',
+      normal: '400ms',
+      slow: '600ms',
+    },
+    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
   }
-};
+} as const;
