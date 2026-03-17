@@ -87,6 +87,50 @@ export const calculateGovStats = (data: FuelData[], startYear: number, endYear: 
   };
 };
 
+export const calculateGovRating = (stats: any, startYear: number, endYear: number, data: FuelData[]) => {
+  if (!stats) return { score: 0, brief: "Dados Insuficientes" };
+
+  const periodData = filterDataByPeriod(data, startYear, endYear);
+  const events = getKeyEvents().filter(e => {
+    const y = parseInt(e.date.split('/')[1]);
+    return y >= startYear && y <= endYear;
+  });
+
+  // 1. Stability (Gasoline StdDev)
+  const gasValues = periodData.map(d => d["Gasolina (R$/L)"]);
+  const mean = gasValues.reduce((a, b) => a + b, 0) / gasValues.length;
+  const variance = gasValues.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / gasValues.length;
+  const stdDev = Math.sqrt(variance);
+  const stabilityScore = Math.max(0, 100 - (stdDev / mean) * 400);
+
+  // 2. Global Context (Brent vs Fuel)
+  const brentStart = periodData[0]["Brent (USD)"] || 50;
+  const brentEnd = periodData[periodData.length - 1]["Brent (USD)"] || 50;
+  const brentDelta = ((brentEnd - brentStart) / brentStart) * 100;
+  const fuelDelta = stats.gasoline;
+  
+  // High score if Fuel rose less than Brent significantly
+  let contextScore = 50;
+  if (brentDelta > 0) {
+    contextScore = fuelDelta < brentDelta ? 80 + (brentDelta - fuelDelta) : 40 - (fuelDelta - brentDelta);
+  } else {
+    contextScore = fuelDelta < 0 ? 90 : 30; // If Brent fell, Fuel SHOULD fall
+  }
+
+  // 3. Event Resilience
+  const resilienceBonus = events.length > 0 ? 10 : 0;
+
+  const totalScore = Math.min(100, (stabilityScore * 0.4) + (contextScore * 0.5) + resilienceBonus);
+  
+  let brief = "";
+  if (totalScore > 80) brief = "Resiliência excepcional em cenários voláteis.";
+  else if (totalScore > 60) brief = "Gestão estável com alinhamento de paridade.";
+  else if (totalScore > 40) brief = "Impacto moderado de fatores externos.";
+  else brief = "Alta volatilidade e descolamento de mercado.";
+
+  return { score: Math.round(totalScore), brief };
+};
+
 export const getGovernmentPeriods = (data?: FuelData[]) => {
   const basePeriods = [
     { name: "Lula I", start: 2003, end: 2006 },
@@ -99,10 +143,15 @@ export const getGovernmentPeriods = (data?: FuelData[]) => {
 
   if (!data) return basePeriods;
 
-  return basePeriods.map(p => ({
-    ...p,
-    stats: calculateGovStats(data, p.start, p.end)
-  }));
+  return basePeriods.map(p => {
+    const stats = calculateGovStats(data, p.start, p.end);
+    const evaluation = calculateGovRating(stats, p.start, p.end, data);
+    return {
+      ...p,
+      stats,
+      evaluation
+    };
+  });
 };
 
 export const getKeyEvents = () => {

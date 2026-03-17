@@ -30,11 +30,12 @@ const CustomGovernmentLabel = ({ viewBox, governo, variacao }: any) => {
   const { x, y } = viewBox ?? { x: 0, y: 0 };
   return (
     <g>
+      <rect x={x} y={y} width={90} height={35} fill="rgba(15, 23, 42, 0.4)" rx={4} />
       <text
         x={x + 4}
-        y={y + 18}
+        y={y + 12}
         fill="#94a3b8"
-        fontSize={10}
+        fontSize={9}
         fontWeight="bold"
         textAnchor="start"
       >
@@ -42,9 +43,10 @@ const CustomGovernmentLabel = ({ viewBox, governo, variacao }: any) => {
       </text>
       <text
         x={x + 4}
-        y={y + 30}
+        y={y + 24}
         fill="#22d3ee"
-        fontSize={10}
+        fontSize={8}
+        fontWeight="bold"
         textAnchor="start"
       >
         {variacao}
@@ -360,7 +362,7 @@ export const FuelChart = ({ data, priceMode, ipcaIndex, visibleFuels, highlighte
               label={
                 <CustomGovernmentLabel 
                   governo={gov.name} 
-                  variacao={`G ${gov.stats?.gasoline > 0 ? '+' : ''}${gov.stats?.gasoline.toFixed(0)}%`}
+                  variacao={`G:${gov.stats?.gasoline > 0 ? '+' : ''}${gov.stats?.gasoline.toFixed(0)}% E:${gov.stats?.ethanol > 0 ? '+' : ''}${gov.stats?.ethanol.toFixed(0)}% D:${gov.stats?.diesel > 0 ? '+' : ''}${gov.stats?.diesel.toFixed(0)}%`}
                 />
               }
             />

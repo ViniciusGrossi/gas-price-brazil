@@ -26,7 +26,7 @@ export const BrentChart = memo(({ data, highlightedGov }: BrentChartProps) => {
     >
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="text-white font-display font-bold text-[10px] uppercase tracking-widest">Índice Global Brent</h3>
+          <h3 className="text-white font-display font-bold text-[10px] uppercase tracking-widest">Preço Médio do Barril de Petróleo</h3>
           <p className="text-[9px] text-slate-500 uppercase font-mono mt-1">USD_POR_BARRIL // SYNC_EXTERNO</p>
         </div>
         <div className="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center border border-teal-500/20">

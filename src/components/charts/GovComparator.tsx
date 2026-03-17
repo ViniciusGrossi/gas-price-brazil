@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { User, ShieldCheck, TrendingUp, TrendingDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { User, ShieldCheck, TrendingUp, TrendingDown, Info } from 'lucide-react';
 
 interface GovStats {
   gasoline: number;
@@ -19,6 +19,7 @@ interface Period {
   start: string | number;
   end: string | number;
   stats: GovStats | null;
+  evaluation?: { score: number; brief: string };
 }
 
 interface GovComparatorProps {
@@ -49,6 +50,7 @@ export const GovComparator: React.FC<GovComparatorProps> = ({
   onSelectPeriod,
   highlightedPeriod 
 }) => {
+  const [hoveredGov, setHoveredGov] = useState<string | null>(null);
   const fuelKey = selectedFuel === 'Gasolina' ? 'gasoline' : selectedFuel === 'Etanol' ? 'ethanol' : 'diesel';
 
   const validPeriods = periods.filter(p => p.stats);
@@ -77,10 +79,34 @@ export const GovComparator: React.FC<GovComparatorProps> = ({
               variants={item}
               whileHover={{ y: -4 }}
               onClick={() => onSelectPeriod(isSelected ? null : period.name)}
-              className={`flex-shrink-0 w-[280px] snap-start exec-glass p-6 border-b-2 transition-all cursor-pointer relative group
+              onMouseEnter={() => setHoveredGov(period.name)}
+              onMouseLeave={() => setHoveredGov(null)}
+              className={`flex-shrink-0 w-[280px] snap-start exec-glass p-6 border-b-2 transition-all cursor-pointer relative group overflow-hidden
               ${isSelected ? 'border-b-teal-500 bg-teal-500/5' : 'border-b-slate-800 border-white/5'}`}
             >
-              <div className="space-y-4">
+              <AnimatePresence>
+                {hoveredGov === period.name && period.evaluation && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute inset-0 z-20 bg-slate-950/95 backdrop-blur-md p-6 border border-teal-500/30 flex flex-col justify-center"
+                  >
+                    <div className="flex items-center gap-2 mb-4">
+                       <Info className="w-5 h-5 text-teal-400" />
+                       <h4 className="text-white font-bold text-[10px] uppercase tracking-widest">Avaliação Executiva</h4>
+                    </div>
+                    <div className="text-4xl font-display font-black text-white mb-2">
+                       {period.evaluation.score}<span className="text-[10px] text-slate-500 ml-1">/100</span>
+                    </div>
+                    <p className="text-[10px] text-teal-400/80 font-medium leading-relaxed border-t border-teal-500/20 pt-3">
+                       {period.evaluation.brief}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <div className="space-y-4 relative z-10">
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="text-white font-bold text-sm uppercase tracking-tight">{period.name}</h4>
@@ -119,7 +145,7 @@ export const GovComparator: React.FC<GovComparatorProps> = ({
 
               {/* Decorative Accent */}
               {isSelected && (
-                <div className="absolute top-2 right-2 flex gap-1">
+                <div className="absolute top-2 right-2 flex gap-1 z-10">
                   <div className="p-1 bg-teal-500/10 rounded border border-teal-500/20">
                     <ShieldCheck className="w-3 h-3 text-teal-400" />
                   </div>

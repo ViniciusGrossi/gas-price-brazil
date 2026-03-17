@@ -165,7 +165,7 @@ function App() {
         </header>
 
         {/* Hero Row: Performance Metrics */}
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <MetricCard 
             title="Preço Gasolina" 
             value={currentPrices.gasoline} 
@@ -188,11 +188,6 @@ function App() {
             trend={-0.8} 
             color="muted"
           />
-          <div className="exec-glass p-6 rounded-2xl flex flex-col justify-center border-white/5">
-            <p className="text-xs text-slate-500 uppercase font-bold tracking-widest mb-2">Período_Ref // Q1</p>
-            <p className="text-xl text-white font-display font-semibold">Março 2024</p>
-            <div className="h-1 w-12 bg-teal-500/50 rounded-full mt-4" />
-          </div>
         </section>
 
         {/* Analytical Deck: Correlation & History */}
