@@ -1,0 +1,1538 @@
+[
+  {
+    "Mês\/Ano":"01\/2002",
+    "Gasolina (R$\/L)":1.69,
+    "Etanol (R$\/L)":1.05,
+    "Diesel (R$\/L)":0.85
+  },
+  {
+    "Mês\/Ano":"02\/2002",
+    "Gasolina (R$\/L)":1.68,
+    "Etanol (R$\/L)":1.04,
+    "Diesel (R$\/L)":0.84
+  },
+  {
+    "Mês\/Ano":"03\/2002",
+    "Gasolina (R$\/L)":1.69,
+    "Etanol (R$\/L)":1.05,
+    "Diesel (R$\/L)":0.85
+  },
+  {
+    "Mês\/Ano":"04\/2002",
+    "Gasolina (R$\/L)":1.76,
+    "Etanol (R$\/L)":1.12,
+    "Diesel (R$\/L)":0.92
+  },
+  {
+    "Mês\/Ano":"05\/2002",
+    "Gasolina (R$\/L)":1.77,
+    "Etanol (R$\/L)":1.15,
+    "Diesel (R$\/L)":0.95
+  },
+  {
+    "Mês\/Ano":"06\/2002",
+    "Gasolina (R$\/L)":1.77,
+    "Etanol (R$\/L)":1.14,
+    "Diesel (R$\/L)":0.98
+  },
+  {
+    "Mês\/Ano":"07\/2002",
+    "Gasolina (R$\/L)":1.77,
+    "Etanol (R$\/L)":1.12,
+    "Diesel (R$\/L)":1.02
+  },
+  {
+    "Mês\/Ano":"08\/2002",
+    "Gasolina (R$\/L)":1.78,
+    "Etanol (R$\/L)":1.11,
+    "Diesel (R$\/L)":1.05
+  },
+  {
+    "Mês\/Ano":"09\/2002",
+    "Gasolina (R$\/L)":1.79,
+    "Etanol (R$\/L)":1.1,
+    "Diesel (R$\/L)":1.08
+  },
+  {
+    "Mês\/Ano":"10\/2002",
+    "Gasolina (R$\/L)":1.88,
+    "Etanol (R$\/L)":1.15,
+    "Diesel (R$\/L)":1.15
+  },
+  {
+    "Mês\/Ano":"11\/2002",
+    "Gasolina (R$\/L)":2.05,
+    "Etanol (R$\/L)":1.25,
+    "Diesel (R$\/L)":1.25
+  },
+  {
+    "Mês\/Ano":"12\/2002",
+    "Gasolina (R$\/L)":2.15,
+    "Etanol (R$\/L)":1.35,
+    "Diesel (R$\/L)":1.3
+  },
+  {
+    "Mês\/Ano":"01\/2003",
+    "Gasolina (R$\/L)":2.21,
+    "Etanol (R$\/L)":1.45,
+    "Diesel (R$\/L)":1.35
+  },
+  {
+    "Mês\/Ano":"02\/2003",
+    "Gasolina (R$\/L)":2.25,
+    "Etanol (R$\/L)":1.48,
+    "Diesel (R$\/L)":1.45
+  },
+  {
+    "Mês\/Ano":"03\/2003",
+    "Gasolina (R$\/L)":2.26,
+    "Etanol (R$\/L)":1.49,
+    "Diesel (R$\/L)":1.5
+  },
+  {
+    "Mês\/Ano":"04\/2003",
+    "Gasolina (R$\/L)":2.19,
+    "Etanol (R$\/L)":1.35,
+    "Diesel (R$\/L)":1.45
+  },
+  {
+    "Mês\/Ano":"05\/2003",
+    "Gasolina (R$\/L)":2.08,
+    "Etanol (R$\/L)":1.15,
+    "Diesel (R$\/L)":1.35
+  },
+  {
+    "Mês\/Ano":"06\/2003",
+    "Gasolina (R$\/L)":2.01,
+    "Etanol (R$\/L)":0.98,
+    "Diesel (R$\/L)":1.3
+  },
+  {
+    "Mês\/Ano":"07\/2003",
+    "Gasolina (R$\/L)":1.96,
+    "Etanol (R$\/L)":0.92,
+    "Diesel (R$\/L)":1.28
+  },
+  {
+    "Mês\/Ano":"08\/2003",
+    "Gasolina (R$\/L)":1.95,
+    "Etanol (R$\/L)":0.91,
+    "Diesel (R$\/L)":1.27
+  },
+  {
+    "Mês\/Ano":"09\/2003",
+    "Gasolina (R$\/L)":1.96,
+    "Etanol (R$\/L)":0.92,
+    "Diesel (R$\/L)":1.28
+  },
+  {
+    "Mês\/Ano":"10\/2003",
+    "Gasolina (R$\/L)":1.96,
+    "Etanol (R$\/L)":0.93,
+    "Diesel (R$\/L)":1.29
+  },
+  {
+    "Mês\/Ano":"11\/2003",
+    "Gasolina (R$\/L)":1.96,
+    "Etanol (R$\/L)":0.94,
+    "Diesel (R$\/L)":1.3
+  },
+  {
+    "Mês\/Ano":"12\/2003",
+    "Gasolina (R$\/L)":1.97,
+    "Etanol (R$\/L)":0.95,
+    "Diesel (R$\/L)":1.32
+  },
+  {
+    "Mês\/Ano":"01\/2004",
+    "Gasolina (R$\/L)":1.97,
+    "Etanol (R$\/L)":0.96,
+    "Diesel (R$\/L)":1.33
+  },
+  {
+    "Mês\/Ano":"02\/2004",
+    "Gasolina (R$\/L)":1.98,
+    "Etanol (R$\/L)":0.98,
+    "Diesel (R$\/L)":1.35
+  },
+  {
+    "Mês\/Ano":"03\/2004",
+    "Gasolina (R$\/L)":1.98,
+    "Etanol (R$\/L)":1.02,
+    "Diesel (R$\/L)":1.36
+  },
+  {
+    "Mês\/Ano":"04\/2004",
+    "Gasolina (R$\/L)":1.98,
+    "Etanol (R$\/L)":1.05,
+    "Diesel (R$\/L)":1.38
+  },
+  {
+    "Mês\/Ano":"05\/2004",
+    "Gasolina (R$\/L)":1.9828060676,
+    "Etanol (R$\/L)":1.0520163705,
+    "Diesel (R$\/L)":1.3886537456
+  },
+  {
+    "Mês\/Ano":"06\/2004",
+    "Gasolina (R$\/L)":2.0624254931,
+    "Etanol (R$\/L)":1.1364964912,
+    "Diesel (R$\/L)":1.4440382273
+  },
+  {
+    "Mês\/Ano":"07\/2004",
+    "Gasolina (R$\/L)":2.1074048577,
+    "Etanol (R$\/L)":1.1616068121,
+    "Diesel (R$\/L)":1.4968910413
+  },
+  {
+    "Mês\/Ano":"08\/2004",
+    "Gasolina (R$\/L)":2.1270532839,
+    "Etanol (R$\/L)":1.2617896337,
+    "Diesel (R$\/L)":1.4945945726
+  },
+  {
+    "Mês\/Ano":"09\/2004",
+    "Gasolina (R$\/L)":2.1235538559,
+    "Etanol (R$\/L)":1.2733800233,
+    "Diesel (R$\/L)":1.4933331661
+  },
+  {
+    "Mês\/Ano":"10\/2004",
+    "Gasolina (R$\/L)":2.1612700483,
+    "Etanol (R$\/L)":1.3473856607,
+    "Diesel (R$\/L)":1.5256923296
+  },
+  {
+    "Mês\/Ano":"11\/2004",
+    "Gasolina (R$\/L)":2.2309436463,
+    "Etanol (R$\/L)":1.4851688352,
+    "Diesel (R$\/L)":1.5838956567
+  },
+  {
+    "Mês\/Ano":"12\/2004",
+    "Gasolina (R$\/L)":2.3171700796,
+    "Etanol (R$\/L)":1.5316325937,
+    "Diesel (R$\/L)":1.6820015835
+  },
+  {
+    "Mês\/Ano":"01\/2005",
+    "Gasolina (R$\/L)":2.3116381348,
+    "Etanol (R$\/L)":1.517045083,
+    "Diesel (R$\/L)":1.6807031954
+  },
+  {
+    "Mês\/Ano":"02\/2005",
+    "Gasolina (R$\/L)":2.3040992848,
+    "Etanol (R$\/L)":1.5086785756,
+    "Diesel (R$\/L)":1.6784870019
+  },
+  {
+    "Mês\/Ano":"03\/2005",
+    "Gasolina (R$\/L)":2.3046547817,
+    "Etanol (R$\/L)":1.5047889636,
+    "Diesel (R$\/L)":1.6762532937
+  },
+  {
+    "Mês\/Ano":"04\/2005",
+    "Gasolina (R$\/L)":2.3136121996,
+    "Etanol (R$\/L)":1.5078300143,
+    "Diesel (R$\/L)":1.6771589916
+  },
+  {
+    "Mês\/Ano":"05\/2005",
+    "Gasolina (R$\/L)":2.3003452795,
+    "Etanol (R$\/L)":1.448481932,
+    "Diesel (R$\/L)":1.6895958932
+  },
+  {
+    "Mês\/Ano":"06\/2005",
+    "Gasolina (R$\/L)":2.2782442581,
+    "Etanol (R$\/L)":1.3532360322,
+    "Diesel (R$\/L)":1.6910878002
+  },
+  {
+    "Mês\/Ano":"07\/2005",
+    "Gasolina (R$\/L)":2.2867538325,
+    "Etanol (R$\/L)":1.3757546793,
+    "Diesel (R$\/L)":1.6906608179
+  },
+  {
+    "Mês\/Ano":"08\/2005",
+    "Gasolina (R$\/L)":2.2927071341,
+    "Etanol (R$\/L)":1.3922716498,
+    "Diesel (R$\/L)":1.6898149879
+  },
+  {
+    "Mês\/Ano":"09\/2005",
+    "Gasolina (R$\/L)":2.4376473688,
+    "Etanol (R$\/L)":1.4335797435,
+    "Diesel (R$\/L)":1.8247483392
+  },
+  {
+    "Mês\/Ano":"10\/2005",
+    "Gasolina (R$\/L)":2.4914143017,
+    "Etanol (R$\/L)":1.5329631926,
+    "Diesel (R$\/L)":1.8729183539
+  },
+  {
+    "Mês\/Ano":"11\/2005",
+    "Gasolina (R$\/L)":2.5016894599,
+    "Etanol (R$\/L)":1.5565893299,
+    "Diesel (R$\/L)":1.8795439252
+  },
+  {
+    "Mês\/Ano":"12\/2005",
+    "Gasolina (R$\/L)":2.5088375066,
+    "Etanol (R$\/L)":1.6262779014,
+    "Diesel (R$\/L)":1.8814782505
+  },
+  {
+    "Mês\/Ano":"01\/2006",
+    "Gasolina (R$\/L)":2.5423876164,
+    "Etanol (R$\/L)":1.7824537032,
+    "Diesel (R$\/L)":1.8825569138
+  },
+  {
+    "Mês\/Ano":"02\/2006",
+    "Gasolina (R$\/L)":2.5528609766,
+    "Etanol (R$\/L)":1.8279235487,
+    "Diesel (R$\/L)":1.8846369878
+  },
+  {
+    "Mês\/Ano":"03\/2006",
+    "Gasolina (R$\/L)":2.6235601749,
+    "Etanol (R$\/L)":2.0365563229,
+    "Diesel (R$\/L)":1.8882580936
+  },
+  {
+    "Mês\/Ano":"04\/2006",
+    "Gasolina (R$\/L)":2.6297774297,
+    "Etanol (R$\/L)":2.0640398424,
+    "Diesel (R$\/L)":1.8879533043
+  },
+  {
+    "Mês\/Ano":"05\/2006",
+    "Gasolina (R$\/L)":2.6180607272,
+    "Etanol (R$\/L)":1.8834494895,
+    "Diesel (R$\/L)":1.8854117361
+  },
+  {
+    "Mês\/Ano":"06\/2006",
+    "Gasolina (R$\/L)":2.5886073294,
+    "Etanol (R$\/L)":1.7358846896,
+    "Diesel (R$\/L)":1.8819937689
+  },
+  {
+    "Mês\/Ano":"07\/2006",
+    "Gasolina (R$\/L)":2.5951443293,
+    "Etanol (R$\/L)":1.7333609572,
+    "Diesel (R$\/L)":1.8823619611
+  },
+  {
+    "Mês\/Ano":"08\/2006",
+    "Gasolina (R$\/L)":2.5943671013,
+    "Etanol (R$\/L)":1.7308699848,
+    "Diesel (R$\/L)":1.8810580162
+  },
+  {
+    "Mês\/Ano":"09\/2006",
+    "Gasolina (R$\/L)":2.5902959241,
+    "Etanol (R$\/L)":1.6880499898,
+    "Diesel (R$\/L)":1.8800685442
+  },
+  {
+    "Mês\/Ano":"10\/2006",
+    "Gasolina (R$\/L)":2.5891808607,
+    "Etanol (R$\/L)":1.6351458489,
+    "Diesel (R$\/L)":1.8795440802
+  },
+  {
+    "Mês\/Ano":"11\/2006",
+    "Gasolina (R$\/L)":2.5774395187,
+    "Etanol (R$\/L)":1.6021578384,
+    "Diesel (R$\/L)":1.8772033758
+  },
+  {
+    "Mês\/Ano":"12\/2006",
+    "Gasolina (R$\/L)":2.5717163607,
+    "Etanol (R$\/L)":1.5937639652,
+    "Diesel (R$\/L)":1.8772935203
+  },
+  {
+    "Mês\/Ano":"01\/2007",
+    "Gasolina (R$\/L)":2.6342674367,
+    "Etanol (R$\/L)":1.7632564593,
+    "Diesel (R$\/L)":1.8921193148
+  },
+  {
+    "Mês\/Ano":"07\/2007",
+    "Gasolina (R$\/L)":2.5349236097,
+    "Etanol (R$\/L)":1.492926491,
+    "Diesel (R$\/L)":1.8711349077
+  },
+  {
+    "Mês\/Ano":"08\/2007",
+    "Gasolina (R$\/L)":2.5267280849,
+    "Etanol (R$\/L)":1.4567025813,
+    "Diesel (R$\/L)":1.874124592
+  },
+  {
+    "Mês\/Ano":"09\/2007",
+    "Gasolina (R$\/L)":2.5215132868,
+    "Etanol (R$\/L)":1.4389246028,
+    "Diesel (R$\/L)":1.8746065666
+  },
+  {
+    "Mês\/Ano":"10\/2007",
+    "Gasolina (R$\/L)":2.5209830071,
+    "Etanol (R$\/L)":1.4240658766,
+    "Diesel (R$\/L)":1.873165702
+  },
+  {
+    "Mês\/Ano":"11\/2007",
+    "Gasolina (R$\/L)":2.5294590841,
+    "Etanol (R$\/L)":1.4871606122,
+    "Diesel (R$\/L)":1.8759127781
+  },
+  {
+    "Mês\/Ano":"12\/2007",
+    "Gasolina (R$\/L)":2.5497352632,
+    "Etanol (R$\/L)":1.5789240403,
+    "Diesel (R$\/L)":1.8801421768
+  },
+  {
+    "Mês\/Ano":"01\/2008",
+    "Gasolina (R$\/L)":2.5529253859,
+    "Etanol (R$\/L)":1.610398766,
+    "Diesel (R$\/L)":1.8785549113
+  },
+  {
+    "Mês\/Ano":"07\/2008",
+    "Gasolina (R$\/L)":2.5368765354,
+    "Etanol (R$\/L)":1.5727274322,
+    "Diesel (R$\/L)":2.1063880649
+  },
+  {
+    "Mês\/Ano":"08\/2008",
+    "Gasolina (R$\/L)":2.5424547525,
+    "Etanol (R$\/L)":1.5839175165,
+    "Diesel (R$\/L)":2.1208249353
+  },
+  {
+    "Mês\/Ano":"09\/2008",
+    "Gasolina (R$\/L)":2.5482199898,
+    "Etanol (R$\/L)":1.5951612208,
+    "Diesel (R$\/L)":2.122572825
+  },
+  {
+    "Mês\/Ano":"10\/2008",
+    "Gasolina (R$\/L)":2.5516544211,
+    "Etanol (R$\/L)":1.6074073516,
+    "Diesel (R$\/L)":2.1238711492
+  },
+  {
+    "Mês\/Ano":"11\/2008",
+    "Gasolina (R$\/L)":2.5532521349,
+    "Etanol (R$\/L)":1.6038263642,
+    "Diesel (R$\/L)":2.1249527927
+  },
+  {
+    "Mês\/Ano":"12\/2008",
+    "Gasolina (R$\/L)":2.5558291522,
+    "Etanol (R$\/L)":1.6029263832,
+    "Diesel (R$\/L)":2.1256503212
+  },
+  {
+    "Mês\/Ano":"01\/2009",
+    "Gasolina (R$\/L)":2.5688518658,
+    "Etanol (R$\/L)":1.6247634826,
+    "Diesel (R$\/L)":2.1257350258
+  },
+  {
+    "Mês\/Ano":"07\/2009",
+    "Gasolina (R$\/L)":2.5322671839,
+    "Etanol (R$\/L)":1.5251317423,
+    "Diesel (R$\/L)":2.0162358876
+  },
+  {
+    "Mês\/Ano":"08\/2009",
+    "Gasolina (R$\/L)":2.5338617647,
+    "Etanol (R$\/L)":1.5400387364,
+    "Diesel (R$\/L)":2.0110651082
+  },
+  {
+    "Mês\/Ano":"09\/2009",
+    "Gasolina (R$\/L)":2.5179271059,
+    "Etanol (R$\/L)":1.5656403103,
+    "Diesel (R$\/L)":2.0006854347
+  },
+  {
+    "Mês\/Ano":"10\/2009",
+    "Gasolina (R$\/L)":2.56082184,
+    "Etanol (R$\/L)":1.6957306089,
+    "Diesel (R$\/L)":1.9982017983
+  },
+  {
+    "Mês\/Ano":"11\/2009",
+    "Gasolina (R$\/L)":2.5786841853,
+    "Etanol (R$\/L)":1.7538848062,
+    "Diesel (R$\/L)":1.9979131613
+  },
+  {
+    "Mês\/Ano":"12\/2009",
+    "Gasolina (R$\/L)":2.5821430191,
+    "Etanol (R$\/L)":1.7831025912,
+    "Diesel (R$\/L)":1.9961966242
+  },
+  {
+    "Mês\/Ano":"01\/2010",
+    "Gasolina (R$\/L)":2.6114321105,
+    "Etanol (R$\/L)":1.8754453073,
+    "Diesel (R$\/L)":2.0017801892
+  },
+  {
+    "Mês\/Ano":"07\/2010",
+    "Gasolina (R$\/L)":2.5797760499,
+    "Etanol (R$\/L)":1.6541632341,
+    "Diesel (R$\/L)":2.0037795374
+  },
+  {
+    "Mês\/Ano":"08\/2010",
+    "Gasolina (R$\/L)":2.5839391575,
+    "Etanol (R$\/L)":1.6802247188,
+    "Diesel (R$\/L)":2.0012636028
+  },
+  {
+    "Mês\/Ano":"09\/2010",
+    "Gasolina (R$\/L)":2.5903823898,
+    "Etanol (R$\/L)":1.6935962466,
+    "Diesel (R$\/L)":2.0024391346
+  },
+  {
+    "Mês\/Ano":"10\/2010",
+    "Gasolina (R$\/L)":2.6068805738,
+    "Etanol (R$\/L)":1.7712166463,
+    "Diesel (R$\/L)":2.0022218131
+  },
+  {
+    "Mês\/Ano":"11\/2010",
+    "Gasolina (R$\/L)":2.6223847943,
+    "Etanol (R$\/L)":1.8175352768,
+    "Diesel (R$\/L)":2.0024576776
+  },
+  {
+    "Mês\/Ano":"12\/2010",
+    "Gasolina (R$\/L)":2.6324400944,
+    "Etanol (R$\/L)":1.861884279,
+    "Diesel (R$\/L)":2.0030055934
+  },
+  {
+    "Mês\/Ano":"01\/2011",
+    "Gasolina (R$\/L)":2.6452385056,
+    "Etanol (R$\/L)":1.9148066337,
+    "Diesel (R$\/L)":2.0128905924
+  },
+  {
+    "Mês\/Ano":"02\/2011",
+    "Gasolina (R$\/L)":2.6512524367,
+    "Etanol (R$\/L)":1.9466730131,
+    "Diesel (R$\/L)":2.0157545996
+  },
+  {
+    "Mês\/Ano":"03\/2011",
+    "Gasolina (R$\/L)":2.6811899952,
+    "Etanol (R$\/L)":2.0309806279,
+    "Diesel (R$\/L)":2.0283854205
+  },
+  {
+    "Mês\/Ano":"07\/2011",
+    "Gasolina (R$\/L)":2.7671561557,
+    "Etanol (R$\/L)":2.0572842788,
+    "Diesel (R$\/L)":2.0300201794
+  },
+  {
+    "Mês\/Ano":"08\/2011",
+    "Gasolina (R$\/L)":2.7667780757,
+    "Etanol (R$\/L)":2.0712373968,
+    "Diesel (R$\/L)":2.0296838471
+  },
+  {
+    "Mês\/Ano":"09\/2011",
+    "Gasolina (R$\/L)":2.7732527159,
+    "Etanol (R$\/L)":2.1134849359,
+    "Diesel (R$\/L)":2.0293765491
+  },
+  {
+    "Mês\/Ano":"10\/2011",
+    "Gasolina (R$\/L)":2.7779560784,
+    "Etanol (R$\/L)":2.1162894342,
+    "Diesel (R$\/L)":2.0316348739
+  },
+  {
+    "Mês\/Ano":"11\/2011",
+    "Gasolina (R$\/L)":2.7775262446,
+    "Etanol (R$\/L)":2.1308656939,
+    "Diesel (R$\/L)":2.0306836008
+  },
+  {
+    "Mês\/Ano":"12\/2011",
+    "Gasolina (R$\/L)":2.7808535809,
+    "Etanol (R$\/L)":2.1511514111,
+    "Diesel (R$\/L)":2.0339649429
+  },
+  {
+    "Mês\/Ano":"01\/2012",
+    "Gasolina (R$\/L)":2.7812599396,
+    "Etanol (R$\/L)":2.1532154793,
+    "Diesel (R$\/L)":2.0365642908
+  },
+  {
+    "Mês\/Ano":"07\/2012",
+    "Gasolina (R$\/L)":2.7700778923,
+    "Etanol (R$\/L)":2.1090823672,
+    "Diesel (R$\/L)":2.0504245917
+  },
+  {
+    "Mês\/Ano":"01\/2013",
+    "Gasolina (R$\/L)":2.763,
+    "Etanol (R$\/L)":1.956,
+    "Diesel (R$\/L)":2.1955
+  },
+  {
+    "Mês\/Ano":"02\/2013",
+    "Gasolina (R$\/L)":2.887,
+    "Etanol (R$\/L)":2.0,
+    "Diesel (R$\/L)":2.291
+  },
+  {
+    "Mês\/Ano":"03\/2013",
+    "Gasolina (R$\/L)":2.886,
+    "Etanol (R$\/L)":2.058,
+    "Diesel (R$\/L)":2.3445
+  },
+  {
+    "Mês\/Ano":"04\/2013",
+    "Gasolina (R$\/L)":2.876,
+    "Etanol (R$\/L)":2.064,
+    "Diesel (R$\/L)":2.379
+  },
+  {
+    "Mês\/Ano":"05\/2013",
+    "Gasolina (R$\/L)":2.862,
+    "Etanol (R$\/L)":2.029,
+    "Diesel (R$\/L)":2.3815
+  },
+  {
+    "Mês\/Ano":"06\/2013",
+    "Gasolina (R$\/L)":2.848,
+    "Etanol (R$\/L)":1.943,
+    "Diesel (R$\/L)":2.3825
+  },
+  {
+    "Mês\/Ano":"07\/2013",
+    "Gasolina (R$\/L)":2.839,
+    "Etanol (R$\/L)":1.918,
+    "Diesel (R$\/L)":2.382
+  },
+  {
+    "Mês\/Ano":"08\/2013",
+    "Gasolina (R$\/L)":2.835,
+    "Etanol (R$\/L)":1.902,
+    "Diesel (R$\/L)":2.3805
+  },
+  {
+    "Mês\/Ano":"09\/2013",
+    "Gasolina (R$\/L)":2.834,
+    "Etanol (R$\/L)":1.895,
+    "Diesel (R$\/L)":2.3805
+  },
+  {
+    "Mês\/Ano":"10\/2013",
+    "Gasolina (R$\/L)":2.834,
+    "Etanol (R$\/L)":1.914,
+    "Diesel (R$\/L)":2.38
+  },
+  {
+    "Mês\/Ano":"11\/2013",
+    "Gasolina (R$\/L)":2.841,
+    "Etanol (R$\/L)":1.932,
+    "Diesel (R$\/L)":2.38
+  },
+  {
+    "Mês\/Ano":"12\/2013",
+    "Gasolina (R$\/L)":2.946,
+    "Etanol (R$\/L)":2.022,
+    "Diesel (R$\/L)":2.518
+  },
+  {
+    "Mês\/Ano":"01\/2014",
+    "Gasolina (R$\/L)":2.956,
+    "Etanol (R$\/L)":2.047,
+    "Diesel (R$\/L)":2.5375
+  },
+  {
+    "Mês\/Ano":"02\/2014",
+    "Gasolina (R$\/L)":2.955,
+    "Etanol (R$\/L)":2.074,
+    "Diesel (R$\/L)":2.5435
+  },
+  {
+    "Mês\/Ano":"03\/2014",
+    "Gasolina (R$\/L)":2.98,
+    "Etanol (R$\/L)":2.168,
+    "Diesel (R$\/L)":2.549
+  },
+  {
+    "Mês\/Ano":"04\/2014",
+    "Gasolina (R$\/L)":2.988,
+    "Etanol (R$\/L)":2.177,
+    "Diesel (R$\/L)":2.555
+  },
+  {
+    "Mês\/Ano":"05\/2014",
+    "Gasolina (R$\/L)":2.978,
+    "Etanol (R$\/L)":2.134,
+    "Diesel (R$\/L)":2.5545
+  },
+  {
+    "Mês\/Ano":"06\/2014",
+    "Gasolina (R$\/L)":2.966,
+    "Etanol (R$\/L)":2.071,
+    "Diesel (R$\/L)":2.5545
+  },
+  {
+    "Mês\/Ano":"07\/2014",
+    "Gasolina (R$\/L)":2.957,
+    "Etanol (R$\/L)":2.042,
+    "Diesel (R$\/L)":2.5545
+  },
+  {
+    "Mês\/Ano":"08\/2014",
+    "Gasolina (R$\/L)":2.96,
+    "Etanol (R$\/L)":2.034,
+    "Diesel (R$\/L)":2.567
+  },
+  {
+    "Mês\/Ano":"09\/2014",
+    "Gasolina (R$\/L)":2.963,
+    "Etanol (R$\/L)":2.005,
+    "Diesel (R$\/L)":2.5705
+  },
+  {
+    "Mês\/Ano":"10\/2014",
+    "Gasolina (R$\/L)":2.96,
+    "Etanol (R$\/L)":1.999,
+    "Diesel (R$\/L)":2.57
+  },
+  {
+    "Mês\/Ano":"11\/2014",
+    "Gasolina (R$\/L)":3.009,
+    "Etanol (R$\/L)":2.016,
+    "Diesel (R$\/L)":2.6385
+  },
+  {
+    "Mês\/Ano":"12\/2014",
+    "Gasolina (R$\/L)":3.031,
+    "Etanol (R$\/L)":2.041,
+    "Diesel (R$\/L)":2.681
+  },
+  {
+    "Mês\/Ano":"01\/2015",
+    "Gasolina (R$\/L)":3.032,
+    "Etanol (R$\/L)":2.061,
+    "Diesel (R$\/L)":2.687
+  },
+  {
+    "Mês\/Ano":"02\/2015",
+    "Gasolina (R$\/L)":3.301,
+    "Etanol (R$\/L)":2.224,
+    "Diesel (R$\/L)":2.8625
+  },
+  {
+    "Mês\/Ano":"03\/2015",
+    "Gasolina (R$\/L)":3.323,
+    "Etanol (R$\/L)":2.226,
+    "Diesel (R$\/L)":2.884
+  },
+  {
+    "Mês\/Ano":"04\/2015",
+    "Gasolina (R$\/L)":3.308,
+    "Etanol (R$\/L)":2.179,
+    "Diesel (R$\/L)":2.883
+  },
+  {
+    "Mês\/Ano":"05\/2015",
+    "Gasolina (R$\/L)":3.299,
+    "Etanol (R$\/L)":2.141,
+    "Diesel (R$\/L)":2.882
+  },
+  {
+    "Mês\/Ano":"06\/2015",
+    "Gasolina (R$\/L)":3.301,
+    "Etanol (R$\/L)":2.112,
+    "Diesel (R$\/L)":2.882
+  },
+  {
+    "Mês\/Ano":"07\/2015",
+    "Gasolina (R$\/L)":3.296,
+    "Etanol (R$\/L)":2.081,
+    "Diesel (R$\/L)":2.8795
+  },
+  {
+    "Mês\/Ano":"08\/2015",
+    "Gasolina (R$\/L)":3.295,
+    "Etanol (R$\/L)":2.061,
+    "Diesel (R$\/L)":2.8795
+  },
+  {
+    "Mês\/Ano":"09\/2015",
+    "Gasolina (R$\/L)":3.277,
+    "Etanol (R$\/L)":2.074,
+    "Diesel (R$\/L)":2.883
+  },
+  {
+    "Mês\/Ano":"10\/2015",
+    "Gasolina (R$\/L)":3.48,
+    "Etanol (R$\/L)":2.365,
+    "Diesel (R$\/L)":2.9995
+  },
+  {
+    "Mês\/Ano":"11\/2015",
+    "Gasolina (R$\/L)":3.576,
+    "Etanol (R$\/L)":2.578,
+    "Diesel (R$\/L)":3.0385
+  },
+  {
+    "Mês\/Ano":"12\/2015",
+    "Gasolina (R$\/L)":3.633,
+    "Etanol (R$\/L)":2.659,
+    "Diesel (R$\/L)":3.0565
+  },
+  {
+    "Mês\/Ano":"01\/2016",
+    "Gasolina (R$\/L)":3.676,
+    "Etanol (R$\/L)":2.718,
+    "Diesel (R$\/L)":3.0755
+  },
+  {
+    "Mês\/Ano":"02\/2016",
+    "Gasolina (R$\/L)":3.71,
+    "Etanol (R$\/L)":2.808,
+    "Diesel (R$\/L)":3.0875
+  },
+  {
+    "Mês\/Ano":"03\/2016",
+    "Gasolina (R$\/L)":3.73,
+    "Etanol (R$\/L)":2.869,
+    "Diesel (R$\/L)":3.092
+  },
+  {
+    "Mês\/Ano":"04\/2016",
+    "Gasolina (R$\/L)":3.717,
+    "Etanol (R$\/L)":2.741,
+    "Diesel (R$\/L)":3.093
+  },
+  {
+    "Mês\/Ano":"05\/2016",
+    "Gasolina (R$\/L)":3.674,
+    "Etanol (R$\/L)":2.478,
+    "Diesel (R$\/L)":3.089
+  },
+  {
+    "Mês\/Ano":"06\/2016",
+    "Gasolina (R$\/L)":3.646,
+    "Etanol (R$\/L)":2.466,
+    "Diesel (R$\/L)":3.087
+  },
+  {
+    "Mês\/Ano":"07\/2016",
+    "Gasolina (R$\/L)":3.638,
+    "Etanol (R$\/L)":2.434,
+    "Diesel (R$\/L)":3.0845
+  },
+  {
+    "Mês\/Ano":"08\/2016",
+    "Gasolina (R$\/L)":3.651,
+    "Etanol (R$\/L)":2.485,
+    "Diesel (R$\/L)":3.08
+  },
+  {
+    "Mês\/Ano":"09\/2016",
+    "Gasolina (R$\/L)":3.648,
+    "Etanol (R$\/L)":2.51,
+    "Diesel (R$\/L)":3.0795
+  },
+  {
+    "Mês\/Ano":"10\/2016",
+    "Gasolina (R$\/L)":3.662,
+    "Etanol (R$\/L)":2.676,
+    "Diesel (R$\/L)":3.0785
+  },
+  {
+    "Mês\/Ano":"11\/2016",
+    "Gasolina (R$\/L)":3.671,
+    "Etanol (R$\/L)":2.812,
+    "Diesel (R$\/L)":3.0645
+  },
+  {
+    "Mês\/Ano":"12\/2016",
+    "Gasolina (R$\/L)":3.734,
+    "Etanol (R$\/L)":2.831,
+    "Diesel (R$\/L)":3.097
+  },
+  {
+    "Mês\/Ano":"01\/2017",
+    "Gasolina (R$\/L)":3.768,
+    "Etanol (R$\/L)":2.91,
+    "Diesel (R$\/L)":3.1655
+  },
+  {
+    "Mês\/Ano":"02\/2017",
+    "Gasolina (R$\/L)":3.755,
+    "Etanol (R$\/L)":2.884,
+    "Diesel (R$\/L)":3.1695
+  },
+  {
+    "Mês\/Ano":"03\/2017",
+    "Gasolina (R$\/L)":3.687,
+    "Etanol (R$\/L)":2.745,
+    "Diesel (R$\/L)":3.1205
+  },
+  {
+    "Mês\/Ano":"04\/2017",
+    "Gasolina (R$\/L)":3.635,
+    "Etanol (R$\/L)":2.639,
+    "Diesel (R$\/L)":3.0855
+  },
+  {
+    "Mês\/Ano":"05\/2017",
+    "Gasolina (R$\/L)":3.617,
+    "Etanol (R$\/L)":2.584,
+    "Diesel (R$\/L)":3.085
+  },
+  {
+    "Mês\/Ano":"06\/2017",
+    "Gasolina (R$\/L)":3.548,
+    "Etanol (R$\/L)":2.485,
+    "Diesel (R$\/L)":3.053
+  },
+  {
+    "Mês\/Ano":"07\/2017",
+    "Gasolina (R$\/L)":3.553,
+    "Etanol (R$\/L)":2.46,
+    "Diesel (R$\/L)":3.036
+  },
+  {
+    "Mês\/Ano":"08\/2017",
+    "Gasolina (R$\/L)":3.781,
+    "Etanol (R$\/L)":2.611,
+    "Diesel (R$\/L)":3.1695
+  },
+  {
+    "Mês\/Ano":"09\/2017",
+    "Gasolina (R$\/L)":3.881,
+    "Etanol (R$\/L)":2.633,
+    "Diesel (R$\/L)":3.241
+  },
+  {
+    "Mês\/Ano":"10\/2017",
+    "Gasolina (R$\/L)":3.895,
+    "Etanol (R$\/L)":2.668,
+    "Diesel (R$\/L)":3.288
+  },
+  {
+    "Mês\/Ano":"11\/2017",
+    "Gasolina (R$\/L)":4.004,
+    "Etanol (R$\/L)":2.79,
+    "Diesel (R$\/L)":3.3555
+  },
+  {
+    "Mês\/Ano":"12\/2017",
+    "Gasolina (R$\/L)":4.085,
+    "Etanol (R$\/L)":2.879,
+    "Diesel (R$\/L)":3.389
+  },
+  {
+    "Mês\/Ano":"01\/2018",
+    "Gasolina (R$\/L)":4.189,
+    "Etanol (R$\/L)":2.984,
+    "Diesel (R$\/L)":3.4365
+  },
+  {
+    "Mês\/Ano":"02\/2018",
+    "Gasolina (R$\/L)":4.208,
+    "Etanol (R$\/L)":3.023,
+    "Diesel (R$\/L)":3.449
+  },
+  {
+    "Mês\/Ano":"03\/2018",
+    "Gasolina (R$\/L)":4.199,
+    "Etanol (R$\/L)":3.032,
+    "Diesel (R$\/L)":3.4425
+  },
+  {
+    "Mês\/Ano":"04\/2018",
+    "Gasolina (R$\/L)":4.215,
+    "Etanol (R$\/L)":2.972,
+    "Diesel (R$\/L)":3.475
+  },
+  {
+    "Mês\/Ano":"05\/2018",
+    "Gasolina (R$\/L)":4.314,
+    "Etanol (R$\/L)":2.811,
+    "Diesel (R$\/L)":3.672
+  },
+  {
+    "Mês\/Ano":"06\/2018",
+    "Gasolina (R$\/L)":4.552,
+    "Etanol (R$\/L)":2.933,
+    "Diesel (R$\/L)":3.465
+  },
+  {
+    "Mês\/Ano":"07\/2018",
+    "Gasolina (R$\/L)":4.492,
+    "Etanol (R$\/L)":2.785,
+    "Diesel (R$\/L)":3.421
+  },
+  {
+    "Mês\/Ano":"08\/2018",
+    "Gasolina (R$\/L)":4.447,
+    "Etanol (R$\/L)":2.656,
+    "Diesel (R$\/L)":3.4125
+  },
+  {
+    "Mês\/Ano":"09\/2018",
+    "Gasolina (R$\/L)":4.625,
+    "Etanol (R$\/L)":2.798,
+    "Diesel (R$\/L)":3.6465
+  },
+  {
+    "Mês\/Ano":"10\/2018",
+    "Gasolina (R$\/L)":4.717,
+    "Etanol (R$\/L)":2.934,
+    "Diesel (R$\/L)":3.7445
+  },
+  {
+    "Mês\/Ano":"11\/2018",
+    "Gasolina (R$\/L)":4.59,
+    "Etanol (R$\/L)":2.917,
+    "Diesel (R$\/L)":3.704
+  },
+  {
+    "Mês\/Ano":"12\/2018",
+    "Gasolina (R$\/L)":4.365,
+    "Etanol (R$\/L)":2.828,
+    "Diesel (R$\/L)":3.5515
+  },
+  {
+    "Mês\/Ano":"01\/2019",
+    "Gasolina (R$\/L)":4.268,
+    "Etanol (R$\/L)":2.812,
+    "Diesel (R$\/L)":3.49
+  },
+  {
+    "Mês\/Ano":"02\/2019",
+    "Gasolina (R$\/L)":4.19,
+    "Etanol (R$\/L)":2.783,
+    "Diesel (R$\/L)":3.501
+  },
+  {
+    "Mês\/Ano":"03\/2019",
+    "Gasolina (R$\/L)":4.305,
+    "Etanol (R$\/L)":2.95,
+    "Diesel (R$\/L)":3.5745
+  },
+  {
+    "Mês\/Ano":"04\/2019",
+    "Gasolina (R$\/L)":4.437,
+    "Etanol (R$\/L)":3.002,
+    "Diesel (R$\/L)":3.6165
+  },
+  {
+    "Mês\/Ano":"05\/2019",
+    "Gasolina (R$\/L)":4.552,
+    "Etanol (R$\/L)":2.99,
+    "Diesel (R$\/L)":3.6895
+  },
+  {
+    "Mês\/Ano":"06\/2019",
+    "Gasolina (R$\/L)":4.468,
+    "Etanol (R$\/L)":2.819,
+    "Diesel (R$\/L)":3.65
+  },
+  {
+    "Mês\/Ano":"07\/2019",
+    "Gasolina (R$\/L)":4.351,
+    "Etanol (R$\/L)":2.776,
+    "Diesel (R$\/L)":3.587
+  },
+  {
+    "Mês\/Ano":"08\/2019",
+    "Gasolina (R$\/L)":4.316,
+    "Etanol (R$\/L)":2.829,
+    "Diesel (R$\/L)":3.568
+  },
+  {
+    "Mês\/Ano":"09\/2019",
+    "Gasolina (R$\/L)":4.326,
+    "Etanol (R$\/L)":2.851,
+    "Diesel (R$\/L)":3.6315
+  },
+  {
+    "Mês\/Ano":"10\/2019",
+    "Gasolina (R$\/L)":4.38,
+    "Etanol (R$\/L)":2.906,
+    "Diesel (R$\/L)":3.741
+  },
+  {
+    "Mês\/Ano":"11\/2019",
+    "Gasolina (R$\/L)":4.413,
+    "Etanol (R$\/L)":2.974,
+    "Diesel (R$\/L)":3.7495
+  },
+  {
+    "Mês\/Ano":"12\/2019",
+    "Gasolina (R$\/L)":4.531,
+    "Etanol (R$\/L)":3.125,
+    "Diesel (R$\/L)":3.774
+  },
+  {
+    "Mês\/Ano":"01\/2020",
+    "Gasolina (R$\/L)":4.579,
+    "Etanol (R$\/L)":3.226,
+    "Diesel (R$\/L)":3.822
+  },
+  {
+    "Mês\/Ano":"02\/2020",
+    "Gasolina (R$\/L)":4.55,
+    "Etanol (R$\/L)":3.248,
+    "Diesel (R$\/L)":3.7545
+  },
+  {
+    "Mês\/Ano":"03\/2020",
+    "Gasolina (R$\/L)":4.462,
+    "Etanol (R$\/L)":3.196,
+    "Diesel (R$\/L)":3.6195
+  },
+  {
+    "Mês\/Ano":"04\/2020",
+    "Gasolina (R$\/L)":4.066,
+    "Etanol (R$\/L)":2.784,
+    "Diesel (R$\/L)":3.3425
+  },
+  {
+    "Mês\/Ano":"05\/2020",
+    "Gasolina (R$\/L)":3.818,
+    "Etanol (R$\/L)":2.55,
+    "Diesel (R$\/L)":3.0885
+  },
+  {
+    "Mês\/Ano":"06\/2020",
+    "Gasolina (R$\/L)":3.964,
+    "Etanol (R$\/L)":2.655,
+    "Diesel (R$\/L)":3.108
+  },
+  {
+    "Mês\/Ano":"07\/2020",
+    "Gasolina (R$\/L)":4.144,
+    "Etanol (R$\/L)":2.739,
+    "Diesel (R$\/L)":3.288
+  },
+  {
+    "Mês\/Ano":"08\/2020",
+    "Gasolina (R$\/L)":4.237,
+    "Etanol (R$\/L)":2.768,
+    "Diesel (R$\/L)":3.3945
+  },
+  {
+    "Mês\/Ano":"10\/2020",
+    "Gasolina (R$\/L)":4.358,
+    "Etanol (R$\/L)":3.006,
+    "Diesel (R$\/L)":3.518
+  },
+  {
+    "Mês\/Ano":"11\/2020",
+    "Gasolina (R$\/L)":4.406,
+    "Etanol (R$\/L)":3.103,
+    "Diesel (R$\/L)":3.5595
+  },
+  {
+    "Mês\/Ano":"12\/2020",
+    "Gasolina (R$\/L)":4.483,
+    "Etanol (R$\/L)":3.179,
+    "Diesel (R$\/L)":3.6445
+  },
+  {
+    "Mês\/Ano":"01\/2021",
+    "Gasolina (R$\/L)":4.622,
+    "Etanol (R$\/L)":3.221,
+    "Diesel (R$\/L)":3.737
+  },
+  {
+    "Mês\/Ano":"02\/2021",
+    "Gasolina (R$\/L)":4.951,
+    "Etanol (R$\/L)":3.429,
+    "Diesel (R$\/L)":3.979
+  },
+  {
+    "Mês\/Ano":"03\/2021",
+    "Gasolina (R$\/L)":5.484,
+    "Etanol (R$\/L)":4.038,
+    "Diesel (R$\/L)":4.2825
+  },
+  {
+    "Mês\/Ano":"04\/2021",
+    "Gasolina (R$\/L)":5.448,
+    "Etanol (R$\/L)":3.826,
+    "Diesel (R$\/L)":4.2325
+  },
+  {
+    "Mês\/Ano":"05\/2021",
+    "Gasolina (R$\/L)":5.604,
+    "Etanol (R$\/L)":4.25,
+    "Diesel (R$\/L)":4.498
+  },
+  {
+    "Mês\/Ano":"06\/2021",
+    "Gasolina (R$\/L)":5.687,
+    "Etanol (R$\/L)":4.358,
+    "Diesel (R$\/L)":4.537
+  },
+  {
+    "Mês\/Ano":"07\/2021",
+    "Gasolina (R$\/L)":5.807,
+    "Etanol (R$\/L)":4.318,
+    "Diesel (R$\/L)":4.6175
+  },
+  {
+    "Mês\/Ano":"08\/2021",
+    "Gasolina (R$\/L)":5.933,
+    "Etanol (R$\/L)":4.476,
+    "Diesel (R$\/L)":4.6405
+  },
+  {
+    "Mês\/Ano":"09\/2021",
+    "Gasolina (R$\/L)":6.078,
+    "Etanol (R$\/L)":4.698,
+    "Diesel (R$\/L)":4.7505
+  },
+  {
+    "Mês\/Ano":"10\/2021",
+    "Gasolina (R$\/L)":6.341,
+    "Etanol (R$\/L)":4.883,
+    "Diesel (R$\/L)":5.0645
+  },
+  {
+    "Mês\/Ano":"11\/2021",
+    "Gasolina (R$\/L)":6.744,
+    "Etanol (R$\/L)":5.37,
+    "Diesel (R$\/L)":5.4015
+  },
+  {
+    "Mês\/Ano":"12\/2021",
+    "Gasolina (R$\/L)":6.67,
+    "Etanol (R$\/L)":5.141,
+    "Diesel (R$\/L)":5.3855
+  },
+  {
+    "Mês\/Ano":"01\/2022",
+    "Gasolina (R$\/L)":6.635,
+    "Etanol (R$\/L)":5.038,
+    "Diesel (R$\/L)":5.5295
+  },
+  {
+    "Mês\/Ano":"02\/2022",
+    "Gasolina (R$\/L)":6.6,
+    "Etanol (R$\/L)":4.744,
+    "Diesel (R$\/L)":5.6235
+  },
+  {
+    "Mês\/Ano":"03\/2022",
+    "Gasolina (R$\/L)":7.012,
+    "Etanol (R$\/L)":4.842,
+    "Diesel (R$\/L)":6.335
+  },
+  {
+    "Mês\/Ano":"04\/2022",
+    "Gasolina (R$\/L)":7.245,
+    "Etanol (R$\/L)":5.326,
+    "Diesel (R$\/L)":6.6675
+  },
+  {
+    "Mês\/Ano":"05\/2022",
+    "Gasolina (R$\/L)":7.28,
+    "Etanol (R$\/L)":5.27,
+    "Diesel (R$\/L)":6.905
+  },
+  {
+    "Mês\/Ano":"06\/2022",
+    "Gasolina (R$\/L)":7.25,
+    "Etanol (R$\/L)":4.9,
+    "Diesel (R$\/L)":7.26
+  },
+  {
+    "Mês\/Ano":"07\/2022",
+    "Gasolina (R$\/L)":6.05,
+    "Etanol (R$\/L)":4.36,
+    "Diesel (R$\/L)":7.515
+  },
+  {
+    "Mês\/Ano":"08\/2022",
+    "Gasolina (R$\/L)":5.39,
+    "Etanol (R$\/L)":3.95,
+    "Diesel (R$\/L)":7.145
+  },
+  {
+    "Mês\/Ano":"09\/2022",
+    "Gasolina (R$\/L)":5.0,
+    "Etanol (R$\/L)":3.48,
+    "Diesel (R$\/L)":6.895
+  },
+  {
+    "Mês\/Ano":"10\/2022",
+    "Gasolina (R$\/L)":4.89,
+    "Etanol (R$\/L)":3.56,
+    "Diesel (R$\/L)":6.62
+  },
+  {
+    "Mês\/Ano":"11\/2022",
+    "Gasolina (R$\/L)":5.04,
+    "Etanol (R$\/L)":3.83,
+    "Diesel (R$\/L)":6.635
+  },
+  {
+    "Mês\/Ano":"12\/2022",
+    "Gasolina (R$\/L)":4.97,
+    "Etanol (R$\/L)":3.84,
+    "Diesel (R$\/L)":6.425
+  },
+  {
+    "Mês\/Ano":"01\/2023",
+    "Gasolina (R$\/L)":5.05,
+    "Etanol (R$\/L)":3.88,
+    "Diesel (R$\/L)":6.385
+  },
+  {
+    "Mês\/Ano":"02\/2023",
+    "Gasolina (R$\/L)":5.09,
+    "Etanol (R$\/L)":3.8,
+    "Diesel (R$\/L)":6.11
+  },
+  {
+    "Mês\/Ano":"03\/2023",
+    "Gasolina (R$\/L)":5.52,
+    "Etanol (R$\/L)":3.93,
+    "Diesel (R$\/L)":5.915
+  },
+  {
+    "Mês\/Ano":"04\/2023",
+    "Gasolina (R$\/L)":5.51,
+    "Etanol (R$\/L)":3.97,
+    "Diesel (R$\/L)":5.785
+  },
+  {
+    "Mês\/Ano":"05\/2023",
+    "Gasolina (R$\/L)":5.39,
+    "Etanol (R$\/L)":3.97,
+    "Diesel (R$\/L)":5.395
+  },
+  {
+    "Mês\/Ano":"06\/2023",
+    "Gasolina (R$\/L)":5.38,
+    "Etanol (R$\/L)":3.76,
+    "Diesel (R$\/L)":5.05
+  },
+  {
+    "Mês\/Ano":"07\/2023",
+    "Gasolina (R$\/L)":5.61,
+    "Etanol (R$\/L)":3.79,
+    "Diesel (R$\/L)":4.97
+  },
+  {
+    "Mês\/Ano":"08\/2023",
+    "Gasolina (R$\/L)":5.71,
+    "Etanol (R$\/L)":3.63,
+    "Diesel (R$\/L)":5.56
+  },
+  {
+    "Mês\/Ano":"09\/2023",
+    "Gasolina (R$\/L)":5.83,
+    "Etanol (R$\/L)":3.64,
+    "Diesel (R$\/L)":6.14
+  },
+  {
+    "Mês\/Ano":"10\/2023",
+    "Gasolina (R$\/L)":5.73,
+    "Etanol (R$\/L)":3.6,
+    "Diesel (R$\/L)":6.15
+  },
+  {
+    "Mês\/Ano":"11\/2023",
+    "Gasolina (R$\/L)":5.63,
+    "Etanol (R$\/L)":3.56,
+    "Diesel (R$\/L)":6.14
+  },
+  {
+    "Mês\/Ano":"12\/2023",
+    "Gasolina (R$\/L)":5.6,
+    "Etanol (R$\/L)":3.48,
+    "Diesel (R$\/L)":5.97
+  },
+  {
+    "Mês\/Ano":"01\/2024",
+    "Gasolina (R$\/L)":5.57,
+    "Etanol (R$\/L)":3.42,
+    "Diesel (R$\/L)":5.905
+  },
+  {
+    "Mês\/Ano":"02\/2024",
+    "Gasolina (R$\/L)":5.75,
+    "Etanol (R$\/L)":3.57,
+    "Diesel (R$\/L)":5.935
+  },
+  {
+    "Mês\/Ano":"03\/2024",
+    "Gasolina (R$\/L)":5.74,
+    "Etanol (R$\/L)":3.58,
+    "Diesel (R$\/L)":5.895
+  },
+  {
+    "Mês\/Ano":"04\/2024",
+    "Gasolina (R$\/L)":5.8,
+    "Etanol (R$\/L)":3.78,
+    "Diesel (R$\/L)":5.91
+  },
+  {
+    "Mês\/Ano":"05\/2024",
+    "Gasolina (R$\/L)":5.86,
+    "Etanol (R$\/L)":3.82,
+    "Diesel (R$\/L)":5.91
+  },
+  {
+    "Mês\/Ano":"06\/2024",
+    "Gasolina (R$\/L)":5.85,
+    "Etanol (R$\/L)":3.82,
+    "Diesel (R$\/L)":5.9
+  },
+  {
+    "Mês\/Ano":"07\/2024",
+    "Gasolina (R$\/L)":6.04,
+    "Etanol (R$\/L)":4.02,
+    "Diesel (R$\/L)":5.975
+  },
+  {
+    "Mês\/Ano":"08\/2024",
+    "Gasolina (R$\/L)":6.11,
+    "Etanol (R$\/L)":4.06,
+    "Diesel (R$\/L)":5.985
+  },
+  {
+    "Mês\/Ano":"09\/2024",
+    "Gasolina (R$\/L)":6.08,
+    "Etanol (R$\/L)":4.05,
+    "Diesel (R$\/L)":5.975
+  },
+  {
+    "Mês\/Ano":"10\/2024",
+    "Gasolina (R$\/L)":6.09,
+    "Etanol (R$\/L)":4.04,
+    "Diesel (R$\/L)":5.985
+  },
+  {
+    "Mês\/Ano":"11\/2024",
+    "Gasolina (R$\/L)":6.1,
+    "Etanol (R$\/L)":4.05,
+    "Diesel (R$\/L)":6.015
+  },
+  {
+    "Mês\/Ano":"12\/2024",
+    "Gasolina (R$\/L)":6.14,
+    "Etanol (R$\/L)":4.11,
+    "Diesel (R$\/L)":6.07
+  },
+  {
+    "Mês\/Ano":"01\/2025",
+    "Gasolina (R$\/L)":6.18,
+    "Etanol (R$\/L)":4.21,
+    "Diesel (R$\/L)":6.12
+  },
+  {
+    "Mês\/Ano":"02\/2025",
+    "Gasolina (R$\/L)":6.36,
+    "Etanol (R$\/L)":4.38,
+    "Diesel (R$\/L)":6.42
+  },
+  {
+    "Mês\/Ano":"03\/2025",
+    "Gasolina (R$\/L)":6.34,
+    "Etanol (R$\/L)":4.35,
+    "Diesel (R$\/L)":6.385
+  },
+  {
+    "Mês\/Ano":"04\/2025",
+    "Gasolina (R$\/L)":6.32,
+    "Etanol (R$\/L)":4.31,
+    "Diesel (R$\/L)":6.255
+  },
+  {
+    "Mês\/Ano":"05\/2025",
+    "Gasolina (R$\/L)":6.28,
+    "Etanol (R$\/L)":4.29,
+    "Diesel (R$\/L)":6.09
+  },
+  {
+    "Mês\/Ano":"06\/2025",
+    "Gasolina (R$\/L)":6.23,
+    "Etanol (R$\/L)":4.2,
+    "Diesel (R$\/L)":6.005
+  },
+  {
+    "Mês\/Ano":"07\/2025",
+    "Gasolina (R$\/L)":6.21,
+    "Etanol (R$\/L)":4.16,
+    "Diesel (R$\/L)":6.0
+  },
+  {
+    "Mês\/Ano":"08\/2025",
+    "Gasolina (R$\/L)":6.19,
+    "Etanol (R$\/L)":4.17,
+    "Diesel (R$\/L)":6.03
+  },
+  {
+    "Mês\/Ano":"09\/2025",
+    "Gasolina (R$\/L)":6.19,
+    "Etanol (R$\/L)":4.26,
+    "Diesel (R$\/L)":6.025
+  },
+  {
+    "Mês\/Ano":"10\/2025",
+    "Gasolina (R$\/L)":6.2,
+    "Etanol (R$\/L)":4.28,
+    "Diesel (R$\/L)":6.015
+  },
+  {
+    "Mês\/Ano":"11\/2025",
+    "Gasolina (R$\/L)":6.17,
+    "Etanol (R$\/L)":4.3,
+    "Diesel (R$\/L)":6.035
+  },
+  {
+    "Mês\/Ano":"12\/2025",
+    "Gasolina (R$\/L)":6.19,
+    "Etanol (R$\/L)":4.42,
+    "Diesel (R$\/L)":6.04
+  },
+  {
+    "Mês\/Ano":"01\/2026",
+    "Gasolina (R$\/L)":6.32,
+    "Etanol (R$\/L)":4.59,
+    "Diesel (R$\/L)":6.085
+  },
+  {
+    "Mês\/Ano":"02\/2026",
+    "Gasolina (R$\/L)":6.3,
+    "Etanol (R$\/L)":4.64,
+    "Diesel (R$\/L)":6.07
+  }
+]
