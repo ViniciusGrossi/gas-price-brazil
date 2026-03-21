@@ -52,25 +52,6 @@ Desenvolvi um motor de cálculo (`calculateGovRating`) que atribui uma nota de *
 
 ---
 
-## 🛠️ Como Executar
-
-1. **Instalar dependências**:
-   ```bash
-   npm install
-   ```
-
-2. **Rodar em desenvolvimento**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Gerar build de produção**:
-   ```bash
-   npm run build
-   ```
-
----
-
 ## 🎨 Design System
 O projeto utiliza um conceito de **Executive Glassmorphism**:
 - Fundos em `slate-950/80` com desfoque de fundo (backdrop-blur).
